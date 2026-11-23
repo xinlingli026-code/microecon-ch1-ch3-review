@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Micro-economics Review · Chapters 1–3</title>
+<meta name="description" content="Review material for Chapters 1–3 of Micro-economics: key concepts explained, formula quick-reference, diagram analysis, common pitfalls and a self-test quiz (bilingual Chinese–English)" />
+<style>
+  :root{
+    --paper:#f5f6f8;
+    --card:#ffffff;
+    --ink:#151a21;
+    --ink-2:#475569;
+    --ink-3:#7b8794;
+    --navy:#173357;
+    --navy-2:#24507f;
+    --accent:#b45309;
+    --accent-soft:#fef3c7;
+    --ok:#15803d;
+    --ok-soft:#dcfce7;
+    --bad:#b91c1c;
+    --bad-soft:#fee2e2;
+    --info:#1d4ed8;
+    --info-soft:#dbeafe;
+    --line:#e3e7ec;
+    --shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px -12px rgba(16,24,40,.16);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:88px}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.75;font-size:16px;
+  }
+  a{color:var(--navy-2)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;gap:16px;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);letter-spacing:.2px;white-space:nowrap}
+  .brand .mark{
+    width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--navy-2));
+    display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800
+  }
+  .topnav{display:flex;gap:4px;margin-left:auto;align-items:center;overflow-x:auto;scrollbar-width:none}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav a{
+    padding:6px 11px;border-radius:8px;font-size:14px;color:var(--ink-2);text-decoration:none;white-space:nowrap
+  }
+  .topnav a:hover{background:#eef2f7;color:var(--navy)}
+  .lang{
+    margin-left:8px;padding:6px 14px;border-radius:999px;background:var(--navy);color:#fff;
+    font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap
+  }
+  .lang:hover{background:var(--navy-2)}
+
+  /* ---------- hero ---------- */
+  .hero{background:linear-gradient(160deg,#102844 0%,#1c3f6b 55%,#275b91 100%);color:#eaf1f8;padding:46px 0 40px}
+  .hero h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);letter-spacing:-.4px}
+  .hero p{margin:0;max-width:760px;color:#c6d6e6;font-size:16px}
+  .hero .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+  .hero .meta span{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+    padding:4px 12px;border-radius:999px;font-size:13px
+  }
+  .hero .meta span b{color:#fff;font-weight:700}
+
+  /* ---------- layout ---------- */
+  .layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:34px;padding:34px 0 70px;align-items:start}
+  .toc{position:sticky;top:78px;font-size:14px;max-height:calc(100vh - 100px);overflow:auto}
+  .toc h4{margin:0 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .toc a{display:block;padding:5px 10px;border-radius:8px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent}
+  .toc a:hover{background:#fff;color:var(--navy);border-left-color:var(--navy-2)}
+  .toc a.lv2{padding-left:24px;font-size:13px;color:var(--ink-3)}
+
+  /* ---------- sections ---------- */
+  section.chapter{margin-bottom:52px;scroll-margin-top:84px}
+  .chapter-head{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden
+  }
+  .chapter-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--navy),var(--navy-2))}
+  .chapter-head .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .chapter-head h2{margin:4px 0 6px;font-size:25px;letter-spacing:-.3px}
+  .chapter-head p{margin:0;color:var(--ink-2);font-size:15px}
+
+  h3.sec{font-size:19px;margin:34px 0 14px;padding-left:12px;border-left:4px solid var(--navy);letter-spacing:-.2px}
+  h4.sub{font-size:16px;margin:22px 0 10px;color:var(--navy)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:14px}
+  .card > :first-child{margin-top:0}
+  .card > :last-child{margin-bottom:0}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+
+  ul.tight{margin:8px 0;padding-left:20px}
+  ul.tight li{margin:5px 0}
+  ol.tight{margin:8px 0;padding-left:20px}
+  ol.tight li{margin:5px 0}
+
+  .kp{display:flex;gap:12px;margin-bottom:10px}
+  .kp .num{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+    display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:2px
+  }
+  .kp .bd{flex:1}
+  .kp .bd b{color:var(--navy)}
+
+  .formula{
+    background:#0f2740;color:#e8f1fb;border-radius:10px;padding:13px 16px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    font-size:14.5px;overflow-x:auto;line-height:1.9;margin:12px 0
+  }
+  .formula .c{color:#8fb3d9}
+  .formula em{color:#fbbf24;font-style:normal}
+
+  .callout{border-radius:10px;padding:12px 15px;margin:12px 0;font-size:14.5px;border-left:4px solid}
+  .callout .t{font-weight:700;display:block;margin-bottom:3px}
+  .callout.warn{background:var(--accent-soft);border-color:var(--accent)}
+  .callout.trap{background:var(--bad-soft);border-color:var(--bad)}
+  .callout.tip{background:var(--ok-soft);border-color:var(--ok)}
+  .callout.info{background:var(--info-soft);border-color:var(--info)}
+
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#eef2f7;font-weight:700;color:var(--navy);font-size:14px}
+  tr:last-child td{border-bottom:none}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+
+  .tag{display:inline-block;padding:1px 9px;border-radius:999px;font-size:12.5px;font-weight:600;margin:1px 2px 1px 0;border:1px solid}
+  .t-up{background:var(--ok-soft);color:var(--ok);border-color:#bbf7d0}
+  .t-down{background:var(--bad-soft);color:var(--bad);border-color:#fecaca}
+  .t-flat{background:#eef2f7;color:var(--ink-2);border-color:#dbe1e8}
+  .t-key{background:var(--accent-soft);color:var(--accent);border-color:#fde68a}
+
+  figure{margin:14px 0}
+  figure svg{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+  figcaption{font-size:13px;color:var(--ink-3);margin-top:6px;text-align:center}
+
+  /* ---------- quiz ---------- */
+  .quiz-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+  .q-head{display:flex;gap:10px;align-items:baseline}
+  .q-no{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+  .q-text{margin:4px 0 12px;font-weight:600;font-size:15.5px}
+  .opts{display:grid;gap:8px}
+  .opt{
+    display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;
+    padding:9px 12px;cursor:pointer;transition:.15s;background:#fff;font-size:14.5px
+  }
+  .opt:hover{border-color:var(--navy-2);background:#f8fafc}
+  .opt .mark{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1px solid #cbd5e1;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--ink-3);margin-top:1px}
+  .opt input{margin-top:4px;accent-color:var(--navy)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+  .opt.correct .mark{background:var(--ok);border-color:var(--ok);color:#fff}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+  .opt.wrong .mark{background:var(--bad);border-color:var(--bad);color:#fff}
+  .q-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .btn{
+    border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:8px;padding:6px 14px;
+    font-size:13.5px;font-weight:600;cursor:pointer;transition:.15s
+  }
+  .btn:hover{border-color:var(--navy-2);background:#f1f5f9}
+  .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn.primary:hover{background:var(--navy-2)}
+  .explain{
+    margin-top:10px;border-radius:10px;padding:10px 14px;font-size:14px;
+    background:#f8fafc;border:1px dashed #cbd5e1;color:var(--ink-2);display:none
+  }
+  .explain.show{display:block}
+  .explain b{color:var(--navy)}
+  .score{font-weight:700;color:var(--navy);font-size:15px}
+
+  .toc-progress{font-size:12.5px;color:var(--ink-3);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+  footer{border-top:1px solid var(--line);background:#fff;padding:26px 0;color:var(--ink-3);font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr}
+    .toc{position:static;max-height:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:8px}
+    .topnav{display:none}
+  }
+  @media print{
+    .topbar,.toc,.q-actions,.hero .meta{display:none}
+    body{background:#fff;font-size:12pt}
+    .layout{display:block}
+    .card,.quiz-card,.chapter-head{box-shadow:none;break-inside:avoid}
+    section.chapter{break-inside:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="mark">μ</span>Micro-economics Review</div>
+    <nav class="topnav">
+      <a href="#ch1">Ch. 1 Introduction</a>
+      <a href="#ch2">Ch. 2 Demand, Supply &amp; Equilibrium</a>
+      <a href="#ch3">Ch. 3 Consumer Behaviour</a>
+      <a href="#formulas">Formula Sheet</a>
+      <a href="#quiz">Self-Test</a>
+    </nav>
+    <a class="lang" href="index.html">中文</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Micro-economics · Review Material for Chapters 1–3</h1>
+    <p>Compiled from the Micro-economics courseware (Chapter 1 Introduction to Economics, Chapter 2 Demand, Supply and the Equilibrium Price, Chapter 3 Theory of Consumer Behaviour): key concepts explained, formula quick-reference, diagram interpretation, common pitfalls and a self-test quiz.</p>
+    <div class="meta">
+      <span>Covers <b>3 chapters / 6 sections</b></span>
+      <span>Key points <b>90+</b></span>
+      <span>Formula cards <b>20</b></span>
+      <span>Self-test questions <b>36</b></span>
+      <span>Bilingual Chinese–English <a href="index.html" style="color:#fbbf24">Chinese version →</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="layout">
+
+  <aside class="toc">
+    <h4>Contents</h4>
+    <a href="#ch1">Chapter 1 Introduction to Economics</a>
+    <a class="lv2" href="#ch1-1">1. Subject of study and scarcity</a>
+    <a class="lv2" href="#ch1-2">2. Micro vs macro</a>
+    <a class="lv2" href="#ch1-3">3. Research methods</a>
+    <a class="lv2" href="#ch1-4">4. A brief history of economic thought</a>
+    <a href="#ch2">Chapter 2 Demand, Supply and the Equilibrium Price</a>
+    <a class="lv2" href="#ch2-1">1. Theory of demand</a>
+    <a class="lv2" href="#ch2-2">2. Theory of supply</a>
+    <a class="lv2" href="#ch2-3">3. Theory of the equilibrium price</a>
+    <a class="lv2" href="#ch2-4">4. Theory of elasticity</a>
+    <a class="lv2" href="#ch2-5">5. Applications of elasticity theory</a>
+    <a href="#ch3">Chapter 3 Theory of Consumer Behaviour</a>
+    <a class="lv2" href="#ch3-1">1. Utility theory</a>
+    <a class="lv2" href="#ch3-2">2. Cardinal utility theory</a>
+    <a class="lv2" href="#ch3-3">3. Ordinal utility theory</a>
+    <a class="lv2" href="#ch3-4">4. Price/income consumption curves</a>
+    <a href="#formulas">Formula Sheet</a>
+    <a href="#quiz">Self-Test (36 questions)</a>
+    <div class="toc-progress">Tip: click “Show answer” to read the explanation; use your browser's print function to print the page or save it as a PDF.</div>
+  </aside>
+
+  <main>
+
+  <!-- ================= CHAPTER 1 ================= -->
+  <section class="chapter" id="ch1">
+    <div class="chapter-head">
+      <div class="kicker">Chapter 1</div>
+      <h2>Chapter 1 Introduction to Economics</h2>
+      <p>Subject of study: the scarcity of resources, choice and their use · Micro and macro · Research methods · A brief history of economic thought</p>
+    </div>
+
+    <h3 class="sec" id="ch1-1">1. The subject of study of economics</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>The meaning of “economics” (three levels)</b><br>① Money and income; ② thrift, saving, efficiency; ③ the activities of social production, distribution, exchange and consumption, together with the institutions that organise these activities.
+      <div class="callout info" style="margin-bottom:0"><span class="t">Cultural background</span>In classical Chinese the term was tied to the idea of “governing the state and relieving the people” and of “administering the state and assisting the nation”; in the West “economics” originally referred to household management (the management of the household estate).</div>
+      </div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>The evolution of the name and the subject matter of economics</b>: Xenophon's <i>Oeconomicus</i> (Household Management) in ancient Greece → Antoine de Montchrétien, <i>Traité d'économie politique</i> (Political Economy for Kings and Queens), France, 1615 → Adam Smith, <i>The Wealth of Nations</i>, 1776 → Keynes, <i>The General Theory</i>, 1936 → Samuelson, <i>Economics</i>, 1948.</div></div>
+      <div class="kp"><span class="num">3</span><div class="bd"><b>Two major theoretical systems</b>: Marxist political economy studies <b>the laws of development of social economic systems and of production relations</b>; Western economics studies <b>the rational allocation and the full utilization of scarce resources</b>.</div></div>
+    </div>
+
+    <h4 class="sub">I. The subject of study of economics: scarcity — choice — use</h4>
+    <div class="card">
+      <ul class="tight">
+        <li><b>The scarcity of resources</b>: the finiteness of resources relative to the unlimited range of human wants.</li>
+        <li><b>Unlimited wants</b>: a Qing-dynasty saying — “Rushing about all day long for nothing but hunger; the moment one is fed, one thinks of clothes…” (often quoted in examinations).</li>
+        <li><b>Two meanings of scarcity</b>: ① resources are finite relative to wants; ② resources are scarce relative to other resources (they have to be chosen among precisely because they have uses).</li>
+        <li><b>The choice and allocation of resources</b>: how to use given resources to produce various economic goods so as to satisfy needs better → the <b>allocation problem</b>, which contains three basic questions:
+          <div class="formula">
+<span class="c"># What to produce, and how much (What &amp; How many)</span> → the production possibilities frontier<br>
+<span class="c"># How to produce (How)</span> → producer behaviour (production theory, cost–revenue theory)<br>
+<span class="c"># For whom to produce (For whom)</span> → factor price determination and the theory of income distribution
+          </div>
+        </li>
+        <li><b>The production possibilities curve (PPC)</b>: the locus of the maximum combinations of output that society can obtain under given resource and technology constraints. Points inside the curve = <b>inefficient allocation, output that cannot be attained</b>; points on the curve = efficient.</li>
+        <li><b>The utilization of resources</b>: how to make better use of existing scarce resources in order to produce more economic goods. The reasons why resources are left idle and wasted:
+          <div class="grid3" style="margin-top:10px">
+            <div class="card" style="margin:0"><b>Economic cycles and economic growth</b><br><span style="color:var(--ink-2)">Why output cannot always stay on the PPC</span></div>
+            <div class="card" style="margin:0"><b>Full employment</b><br><span style="color:var(--ink-2)">Why resources are not fully utilized</span></div>
+            <div class="card" style="margin:0"><b>Inflation</b><br><span style="color:var(--ink-2)">How changes in the purchasing power of money affect output</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="callout tip"><span class="t">Definition of economics (must be memorised)</span>Economics is the discipline that studies <b>the allocation and utilization of scarce resources under the market economic system</b>.
+      <br><b>The institutional trichotomy:</b> the planned economic system, the market economic system, the mixed economic system.</div>
+    </div>
+
+    <h3 class="sec" id="ch1-2">2. The basic content of economics</h3>
+    <div class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Item of comparison</th><th class="c">Micro-economics</th><th class="c">Macro-economics</th></tr></thead>
+        <tbody>
+          <tr><td>Subject of study</td><td class="c">the behaviour of individual economic units (firms, households)</td><td class="c">the activity of the whole national economy</td></tr>
+          <tr><td>Problem solved</td><td class="c">the allocation of resources</td><td class="c">the utilization of resources</td></tr>
+          <tr><td>Core theory</td><td class="c">price theory</td><td class="c">the theory of national income determination</td></tr>
+          <tr><td>Method</td><td class="c">microeconomic analysis (analysis of individual units)</td><td class="c">macroeconomic analysis (aggregation and averages of individual units)</td></tr>
+          <tr><td>Basic assumptions</td><td class="c">market clearing, perfect rationality, perfect information</td><td class="c">an imperfect market mechanism, and a government able to regulate the economy</td></tr>
+          <tr><td>Main content</td><td class="c">equilibrium price theory, theory of consumer behaviour, theory of producer behaviour, theory of market structure, factor price determination and income distribution, general equilibrium and welfare economics, market failure and microeconomic policy</td><td class="c">national income determination, economic growth, business cycles, unemployment, inflation, the open economy, macroeconomic policy</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout trap"><span class="t">The three basic assumptions of micro-economics (a frequent examination point)</span>
+      ① <b>Market clearing (clean markets)</b>: under spontaneous price adjustment the goods, labour and capital markets clear and resources are fully utilized.<br>
+      ② <b>Perfect rationality</b>: producers and consumers are both perfectly self-interested economic agents who act on the maximization principle and know how to implement it.<br>
+      ③ <b>Perfect information</b>: information is plentiful, its distribution is perfectly symmetric, and acquiring it costs nothing.
+      </div>
+      <div class="callout info"><span class="t">The differences and the connections between micro and macro</span>
+      <b>Differences</b>: five points differ — subject of study, problem solved, basic assumptions, method, core theory.<br>
+      <b>Connections</b>: ① they complement each other; ② both take the market economic system as their premise; ③ micro-economics is the foundation of macro-economics.
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch1-3">3. The research methods of economics</h3>
+    <div class="card">
+      <h4 class="sub" style="margin-top:0">1. Economic models and the six-step procedure</h4>
+      <p>An economic model: a theoretical structure describing the interrelationships among the relevant economic variables. The typical steps are:</p>
+      <div class="formula">define the variables → make the assumptions → formulate the hypothesis → explain and predict → test the predictions → evaluate and choose (if the test is passed the theory is accepted; if it is not passed it is rejected and a new theory is put forward; the assumptions and hypotheses may be modified)</div>
+      <ul class="tight">
+        <li><b>Endogenous variable</b>: a variable that the theory seeks to explain; <b>exogenous variable</b>: a variable determined by factors outside the theory.</li>
+        <li><b>Stock</b>: the value of a variable existing at a point in time; <b>flow</b>: the value of a variable arising over a period of time.</li>
+        <li><b>How to distinguish a stock from a flow</b>: ① can the values be added directly (stocks cannot, flows can); ② is it related to time (stocks are not, flows are).</li>
+      </ul>
+      <div class="callout trap"><span class="t">Common pitfall</span><b>Endogenous/exogenous variables ≠ independent/dependent variables.</b> In Q = a − bP, a and b are constants, and both P and Q are endogenous variables; it is national consumption policy, income, consumption preferences and the like — factors not captured by the model — that are exogenous; within this function P is the independent variable and Q the dependent variable.</div>
+
+      <h4 class="sub">2. Positive analysis and normative analysis</h4>
+      <div class="grid2">
+        <div class="card" style="margin:0"><b>Positive analysis</b><br>It answers the question <b>“what is the case”</b>, taking the facts as they are and carrying no value judgement.</div>
+        <div class="card" style="margin:0"><b>Normative analysis</b><br>It answers the question <b>“what ought to be the case”</b>, reasoning about what should happen on the basis of value judgements.</div>
+      </div>
+
+      <h4 class="sub">3. Equilibrium analysis and marginal analysis</h4>
+      <ul class="tight">
+        <li><b>Equilibrium analysis</b>: given that external factors are known and fixed, it studies the conditions for equilibrium to arise. It is divided into <b>partial equilibrium</b> (a single market, other conditions constant) and <b>general equilibrium</b> (all markets taken as a whole and influencing one another).</li>
+        <li><b>Marginal analysis</b>: the margin is the increment of an economic variable; a marginal quantity is the increase in another variable caused by a one-unit increase in the given variable (e.g. marginal cost = the increase in total cost caused by a one-unit increase in output).</li>
+      </ul>
+
+      <h4 class="sub">4. Static, comparative static and dynamic analysis</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Method</th><th>Meaning</th><th class="c">Focus</th></tr></thead>
+        <tbody>
+          <tr><td>Static analysis</td><td>Ignoring the time factor and the process of reaching equilibrium, it analyses under given assumptions only <b>the conditions for the formation</b> of an equilibrium state</td><td class="c">conditions</td></tr>
+          <tr><td>Comparative static analysis</td><td>After the original conditions change, it compares <b>the resulting static equilibria</b></td><td class="c">comparison</td></tr>
+          <tr><td>Dynamic analysis</td><td>It introduces the time factor and analyses <b>the process of transition</b> from the original equilibrium to the new one</td><td class="c">process</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch1-4">4. A brief history of the development of economics</h3>
+    <div class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Period</th><th class="c">Stage</th><th>Representative figures and works</th><th>Core idea / significance</th></tr></thead>
+        <tbody>
+          <tr><td>Mid-15th to 17th century</td><td class="c">Mercantilism</td><td>Early: Hales, Stafford, Montchrétien<br>Late: Thomas Mun, <i>England's Treasure by Forraign Trade</i> (1621/1630)</td><td>The balance-of-trade doctrine: gold and silver are the only forms of wealth; wealth comes from a surplus of foreign trade; the government should encourage foreign trade. Mun: “Money breeds trade, and trade breeds money.”</td></tr>
+          <tr><td>Mid-18th century</td><td class="c">Physiocracy</td><td>Boisguilbert, Quesnay</td><td>Land is the source of wealth; wealth cannot be created by buying and selling; agriculture is dominant.</td></tr>
+          <tr><td>Mid-18th century to the 1870s</td><td class="c">Classical economics</td><td>Adam Smith, <i>The Wealth of Nations</i> (1776)<br>David Ricardo, <i>On the Principles of Political Economy and Taxation</i> (1817)<br>Mill, Malthus, Say</td><td>Smith: wealth consists of material products; the division of labour and capital accumulation are the ways of increasing wealth; prices adjust the economy automatically; supply determines price; laissez-faire (the first revolution in the history of economics). Ricardo: the labour theory of value together with distribution theory at the core, and the theory of comparative advantage. Say: supply automatically creates demand.</td></tr>
+          <tr><td>The 1870s to the 1930s</td><td class="c">Neoclassical economics</td><td>Marginal utility theory: Menger, Jevons, Walras<br>Equilibrium price theory: Marshall, <i>Principles of Economics</i> (1890)<br>Market structure: Chamberlin, <i>The Theory of Monopolistic Competition</i> (1933); Robinson, <i>Economics of Imperfect Competition</i></td><td>Value is determined by consumers' subjective evaluation (marginal utility) — the second revolution; the theory of the equilibrium price built the modern microeconomic system; the assumption of perfect competition was abandoned, completing the microeconomic revolution.</td></tr>
+          <tr><td>The 1930s–1940s</td><td class="c">Modern economics · the establishment of macroeconomics</td><td>Keynes, <i>The General Theory of Employment, Interest and Money</i> (1936)</td><td>Emerging against the background of the Great Depression of the 1930s, the appearance of Keynesian macroeconomic theory marks the third revolution in the history of economics; in practice: the New Deal.</td></tr>
+          <tr><td>The 1940s to the late 1960s</td><td class="c">The development of macroeconomics</td><td>The neo-classical synthesis (Samuelson, <i>Economics</i>, 1948), the neo-Cambridge school (Pigou, Robinson)</td><td>Fusing Marshallian microeconomics with Keynesian macroeconomics, forming the two halves of economics.</td></tr>
+          <tr><td>From the 1970s onward</td><td class="c">The transformation of macroeconomics</td><td>Monetarism (Friedman), rational expectations (Lucas), supply-side economics (Laffer), institutional economics (Veblen); new Keynesianism (Samuelson, Stiglitz, Mankiw)</td><td>Background: the stagflation of the late 1960s and early 1970s; a reaction against Keynes.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout info"><span class="t">Three epoch-making economists</span>Adam Smith → modern micro-economics; Karl Marx → Marxist political economy; Maynard Keynes → modern macro-economics.<br><b>The mainstream controversy</b>: new Keynesianism versus monetarism; <b>the focus of the debate</b>: whether the market mechanism is fully effective and whether the state should intervene in the economy.</div>
+    </div>
+  </section>
+
+  <!-- ================= CHAPTER 2 ================= -->
+  <section class="chapter" id="ch2">
+    <div class="chapter-head">
+      <div class="kicker">Chapter 2</div>
+      <h2>Chapter 2 Demand, Supply and the Equilibrium Price</h2>
+      <p>Theory of demand · Theory of supply · Theory of the equilibrium price · Theory of elasticity and its applications</p>
+    </div>
+
+    <h3 class="sec" id="ch2-1">1. Theory of demand</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>The meaning of demand</b>: the quantity of a given good that consumers are <b>willing and able to buy</b> at each price level during a given period. Three key points: ① it refers to one particular good; ② it describes an inverse relationship between price and quantity demanded; ③ it is <b>the unity of the desire to purchase and the ability to pay</b> — actual rather than potential demand.</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>The demand curve</b>: a curve showing the inverse relationship between the price of a good and the quantity demanded; it slopes down to the right.</div></div>
+      <div class="formula">
+D = f(a, b, c, d, …) <span class="c">general demand function</span><br>
+D = f(P)      <span class="c">linear:</span> D = a − bP or D = aP − b <span class="c">(a and b are positive constants)</span>
+      </div>
+      <h4 class="sub">Factors affecting demand (7 factors — memorize the direction)</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Factor</th><th class="c">Direction</th><th>Explanation</th></tr></thead>
+        <tbody>
+          <tr><td>1. The price of the good itself</td><td class="c"><span class="tag t-down">opposite</span></td><td>price rises → demand falls</td></tr>
+          <tr><td>2. The price of related goods</td><td class="c"><span class="tag t-flat">depends on the relation</span></td><td><b>Complements</b> (cars–petrol, shuttlecocks–rackets, phones–chargers): opposite; <b>substitutes</b> (pork–poultry and fish, soap–laundry detergent): same</td></tr>
+          <tr><td>3. Consumer income</td><td class="c"><span class="tag t-flat">depends on the good</span></td><td>normal goods: same; inferior goods: opposite; basic necessities: essentially unchanged</td></tr>
+          <tr><td>4. Consumer preferences</td><td class="c"><span class="tag t-up">same</span></td><td>why advertise goods that are barely differentiated?</td></tr>
+          <tr><td>5. Expectations about the future</td><td class="c"><span class="tag t-up">same</span></td><td>expectations about future income, expenditure and the prices of goods</td></tr>
+          <tr><td>6. The size and structure of the population</td><td class="c"><span class="tag t-flat">structural</span></td><td>population and necessities move in the same direction; a change in structure changes the structure of demand (aging → greater demand for goods for the elderly)</td></tr>
+          <tr><td>7. Government consumption policy</td><td class="c"><span class="tag t-up">same</span></td><td>—</td></tr>
+          <tr><td>Others</td><td class="c">—</td><td>climate, holidays, unexpected events (epidemics → masks, disinfectant alcohol, protective clothing; Valentine's Day → roses, chocolates)</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout warn"><span class="t">The law of demand and its exceptions</span>
+      <b>The law of demand</b>: ceteris paribus, the quantity demanded of a good and its price move in <b>opposite directions</b> (price rises → quantity falls).<br>
+      <b>Exception</b>: the <b>Giffen good</b> — a price rise actually increases the quantity demanded (as with some inferior goods).</div>
+    </div>
+
+    <h3 class="sec" id="ch2-2">2. Theory of supply</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>The meaning of supply</b>: the quantity of a given good that producers are <b>willing and able to supply</b> at each price level during a given period; it is <b>the unity of the desire to supply and the capacity to supply</b>.</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>The supply curve</b>: the relationship between price and quantity supplied, which move in the same direction; it slopes up to the right.</div></div>
+      <div class="formula">
+S = f(a, b, c, d, …) <span class="c">general supply function</span><br>
+S = f(P)      <span class="c">linear:</span> S = −c + dP <span class="c">non-linear:</span> S = λP<sup>β</sup> <span class="c">(c, d, λ and β are positive constants)</span>
+      </div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Factors affecting supply</th><th class="c">Direction</th><th>Explanation</th></tr></thead>
+        <tbody>
+          <tr><td>1. The price of the good itself</td><td class="c"><span class="tag t-up">same</span></td><td>price rises → supply increases</td></tr>
+          <tr><td>2. The price of related goods</td><td class="c"><span class="tag t-flat">depends on the relation</span></td><td><b>Complements</b>: opposite; <b>substitutes</b>: same; <b>goods produced from the same resources</b> (rice–wheat, defence goods–civilian goods): opposite</td></tr>
+          <tr><td>3. The state of production technology</td><td class="c"><span class="tag t-up">same</span></td><td>technological progress raises supply</td></tr>
+          <tr><td>4. The prices of the factors of production</td><td class="c"><span class="tag t-down">opposite</span></td><td>higher factor prices raise costs</td></tr>
+          <tr><td>5. Producers' expectations about the future</td><td class="c"><span class="tag t-flat">depends on the case</span></td><td>optimistic expectations → reduced current supply and expansion of production capacity → greater future supply; pessimistic expectations the other way round</td></tr>
+          <tr><td>6. Government economic (industrial) policy</td><td class="c"><span class="tag t-flat">depends on the policy</span></td><td>encouragement of investment and production (tax cuts, 5G/new energy/AI/the internet/big data/UHV transmission/intercity high-speed rail) → supply increases; restriction (textiles, steel, cement, chemicals) → supply falls</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout warn"><span class="t">The law of supply and its exceptions</span>
+      <b>The law of supply</b>: ceteris paribus, the quantity supplied and the price move in <b>the same direction</b>.<br>
+      <b>Exceptions</b>: the <b>supply of labour</b> (a higher wage may reduce the supply of labour — the McGregor X theory: substitution effect versus income effect), and the supply of <b>land, antiques and works of art</b> (quantity supplied is almost unchanged when the price rises).</div>
+    </div>
+
+    <h3 class="sec" id="ch2-3">3. Theory of the equilibrium price</h3>
+    <div class="card">
+      <ul class="tight">
+        <li><b>The equilibrium price</b>: the price at which the quantity supplied of a good equals the quantity demanded; the corresponding quantity demanded (supplied) is the <b>equilibrium quantity</b>.</li>
+        <li><b>How it forms</b>: P &gt; P₀ → excess supply → P falls and Q moves toward equilibrium; P &lt; P₀ → excess demand → P rises and Q moves toward equilibrium. In reality, <b>wages (labour market) and interest rates (capital market) are also market equilibrium prices</b>.</li>
+      </ul>
+      <div class="formula">
+Equilibrium solution: <em>Q<sub>d</sub> = Q<sub>s</sub></em> → solve the system for P₀ and Q₀<br>
+<span class="c">Example:</span> Q<sub>d</sub> = 22 − 5P, Q<sub>s</sub> = −5 + 4P ⇒ 22 − 5P = −5 + 4P ⇒ <em>P = 3, Q<sub>d</sub> = Q<sub>s</sub> = 7</em>
+      </div>
+
+      <figure>
+        <svg viewBox="0 0 640 320" role="img" aria-label="Supply–demand equilibrium diagram">
+          <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/></marker></defs>
+          <line x1="70" y1="270" x2="590" y2="270" stroke="#475569" stroke-width="1.6" marker-end="url(#ah)"/>
+          <line x1="70" y1="270" x2="70" y2="30" stroke="#475569" stroke-width="1.6" marker-end="url(#ah)"/>
+          <text x="598" y="286" font-size="14" fill="#475569">Q</text>
+          <text x="52" y="34" font-size="14" fill="#475569">P</text>
+          <line x1="110" y1="250" x2="540" y2="80" stroke="#1d4ed8" stroke-width="2.6"/>
+          <text x="520" y="72" font-size="15" fill="#1d4ed8" font-weight="700">D</text>
+          <line x1="110" y1="80" x2="540" y2="250" stroke="#b91c1c" stroke-width="2.6"/>
+          <text x="520" y="268" font-size="15" fill="#b91c1c" font-weight="700">S</text>
+          <circle cx="325" cy="165" r="6" fill="#173357"/>
+          <line x1="325" y1="165" x2="325" y2="270" stroke="#94a3b8" stroke-dasharray="4 4"/>
+          <line x1="70" y1="165" x2="325" y2="165" stroke="#94a3b8" stroke-dasharray="4 4"/>
+          <text x="332" y="286" font-size="13" fill="#475569">Q₀</text>
+          <text x="40" y="169" font-size="13" fill="#475569">P₀</text>
+          <text x="338" y="160" font-size="14" fill="#173357" font-weight="700">E</text>
+        </svg>
+        <figcaption>Figure 1: The equilibrium price P₀ and the equilibrium quantity Q₀ are determined by the intersection of the supply and demand curves</figcaption>
+      </figure>
+
+      <h4 class="sub">The laws of demand and supply (core conclusions)</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Situation</th><th class="c">Equilibrium price P₀</th><th class="c">Equilibrium quantity Q₀</th></tr></thead>
+        <tbody>
+          <tr><td>Supply unchanged, demand increases (D shifts right)</td><td class="c"><span class="tag t-up">rises</span></td><td class="c"><span class="tag t-up">increases</span></td></tr>
+          <tr><td>Supply unchanged, demand decreases (D shifts left)</td><td class="c"><span class="tag t-down">falls</span></td><td class="c"><span class="tag t-down">decreases</span></td></tr>
+          <tr><td>Demand unchanged, supply increases (S shifts right)</td><td class="c"><span class="tag t-down">falls</span></td><td class="c"><span class="tag t-up">increases</span></td></tr>
+          <tr><td>Demand unchanged, supply decreases (S shifts left)</td><td class="c"><span class="tag t-up">rises</span></td><td class="c"><span class="tag t-down">decreases</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout tip"><span class="t">The laws of demand and supply</span>Supply unchanged → a change in demand causes P and Q to move in <b>the same direction</b>; demand unchanged → a change in supply causes P to move in the <b>opposite direction</b> and Q in <b>the same direction</b>.</div>
+
+      <h4 class="sub">Simultaneous shifts of supply and demand (9 cases — memorize the signs)</h4>
+      <div class="grid2">
+        <div class="card" style="margin:0">
+          <b>Shifts in the same direction</b>
+          <div class="scroll"><table>
+            <tbody>
+              <tr><td>S↗ &gt; D↗</td><td class="c">P₀↘, Q₀↗</td></tr>
+              <tr><td>S↗ = D↗</td><td class="c">P₀ unchanged, Q₀↗</td></tr>
+              <tr><td>S↗ &lt; D↗</td><td class="c">P₀↗, Q₀↗</td></tr>
+              <tr><td>S↘ &gt; D↘</td><td class="c">P₀↗, Q₀↘</td></tr>
+              <tr><td>S↘ = D↘</td><td class="c">P₀ unchanged, Q₀↘</td></tr>
+              <tr><td>S↘ &lt; D↘</td><td class="c">P₀↘, Q₀↘</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="card" style="margin:0">
+          <b>Shifts in opposite directions</b>
+          <div class="scroll"><table>
+            <tbody>
+              <tr><td>S↗ &gt; D↘</td><td class="c">P₀↘, Q₀↗</td></tr>
+              <tr><td>S↗ = D↘</td><td class="c">P₀↘, Q₀ unchanged</td></tr>
+              <tr><td>S↗ &lt; D↘</td><td class="c">P₀↘, Q₀↘</td></tr>
+              <tr><td>S↘ &gt; D↗</td><td class="c">P₀↗, Q₀↘</td></tr>
+              <tr><td>S↘ = D↗</td><td class="c">P₀↗, Q₀ unchanged</td></tr>
+              <tr><td>S↘ &lt; D↗</td><td class="c">P₀↗, Q₀↗</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
+      <h4 class="sub">Government intervention in prices: price policy</h4>
+      <div class="grid2">
+        <div class="card" style="margin:0">
+          <b>① A support price (price floor)</b><br>
+          A minimum price set by the government <b>above</b> the equilibrium price (e.g. agricultural product prices, minimum wage standards).<br>
+          Result: <b>excess supply</b>, with a surplus of Q<sub>s</sub> − Q<sub>d</sub>.<br>
+          Remedies: ① government purchase (adding to stocks or to exports); ② subsidies to producers; ③ restriction of the area planted.<br>
+          <span class="tag t-up">Positive</span> stabilizes and supports agricultural development <span class="tag t-down">Negative</span> ① excess supply ② increased government budgetary expenditure ③ may trigger international trade wars in agricultural products
+        </div>
+        <div class="card" style="margin:0">
+          <b>② A restricted price (price ceiling)</b><br>
+          A maximum price set by the government <b>below</b> the equilibrium price, used in wartime, in disasters and other special periods and for basic necessities.<br>
+          Result: <b>excess demand</b>. The government must operate a <b>monopoly</b> or introduce <b>rationing</b> (supply by coupons, e.g. grain coupons from 1955 to 1993).<br>
+          <span class="tag t-up">Positive</span> ① guarantees basic living needs ② promotes social equality and stability<br>
+          <span class="tag t-down">Negative</span> ① discourages an increase in supply and restrains demand → excess demand ② easily gives rise to “black market” transactions and corrupts social morals
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch2-4">4. Theory of elasticity</h3>
+    <div class="card">
+      <h4 class="sub">1. Price elasticity of demand Ed</h4>
+      <p><b>Meaning</b>: the ratio of the percentage change in the quantity demanded of a good to the percentage change in its price, i.e. the responsiveness of quantity demanded to a change in price.</p>
+      <div class="formula">
+Point elasticity: <em>E<sub>d</sub> = (dQ / dP) × (P / Q)</em>  Arc elasticity: <em>E<sub>d</sub> = −(ΔQ / ΔP) × (P̄ / Q̄)</em><br>
+<span class="c">Note:</span> ① it is a <b>ratio of percentages</b> rather than of absolute quantities; ② quantity demanded and price move in opposite directions, so the elasticity is negative; in practice <b>the absolute value is used</b>; ③ elasticity differs at different points on the same demand curve — <b>points in the upper left are more elastic than points in the lower right</b>; ④ point elasticity is a special case of arc elasticity.
+      </div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Type</th><th class="c">Coefficient</th><th>Meaning</th><th class="c">Curve shape</th><th class="c">Typical goods</th></tr></thead>
+        <tbody>
+          <tr><td class="c">Perfectly elastic</td><td class="c">E<sub>d</sub> → ∞</td><td>demand is unlimited at the given price level</td><td class="c">horizontal line</td><td class="c">—</td></tr>
+          <tr><td class="c">Elastic</td><td class="c">E<sub>d</sub> &gt; 1</td><td>the percentage change in quantity demanded exceeds the percentage change in price</td><td class="c">relatively flatter</td><td class="c">non-necessities, luxuries, recreational services</td></tr>
+          <tr><td class="c">Unit elastic</td><td class="c">E<sub>d</sub> = 1</td><td>the two ratios are equal</td><td class="c">—</td><td class="c">—</td></tr>
+          <tr><td class="c">Inelastic</td><td class="c">0 &lt; E<sub>d</sub> &lt; 1</td><td>the percentage change in quantity demanded is less than the percentage change in price</td><td class="c">relatively steeper</td><td class="c">daily necessities such as rice, salt, vegetables and fuel</td></tr>
+          <tr><td class="c">Perfectly inelastic</td><td class="c">E<sub>d</sub> = 0</td><td>quantity demanded does not change however much the price changes</td><td class="c">vertical line</td><td class="c">—</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout info"><span class="t">The 5 factors that determine the price elasticity of demand</span>
+      ① <b>The degree of necessity of the good</b>: the more necessary it is, the more inelastic (luxuries are highly elastic).<br>
+      ② <b>The degree of substitutability of the good</b>: the more close substitutes it has, the more elastic it is.<br>
+      ③ <b>The share of the good in total household expenditure</b>: <b>directly proportional to</b> elasticity.<br>
+      ④ <b>How long the good is used</b>: durable consumer goods (long life) are elastic; non-durables are inelastic.<br>
+      ⑤ <b>The breadth of the uses of the good</b>: <b>directly proportional to</b> elasticity (the more uses it has, the more a price rise cuts back its less important uses).
+      </div>
+
+      <h4 class="sub">2. Income elasticity of demand EI</h4>
+      <div class="formula">E<sub>I</sub> = % change in demand ÷ % change in income</div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Type</th><th class="c">Coefficient</th><th>Meaning / curve</th></tr></thead>
+        <tbody>
+          <tr><td class="c">Inelastic</td><td class="c">E<sub>I</sub> = 0</td><td>demand does not change however income changes; the income–demand curve is vertical</td></tr>
+          <tr><td class="c">Elastic</td><td class="c">E<sub>I</sub> &gt; 1</td><td>the % change in demand exceeds the % change in income; the curve is relatively flatter</td></tr>
+          <tr><td class="c">Inelastic</td><td class="c">0 &lt; E<sub>I</sub> &lt; 1</td><td>the % change in demand is less than the % change in income; the curve is relatively steeper</td></tr>
+          <tr><td class="c">Unit elastic</td><td class="c">E<sub>I</sub> = 1</td><td>the two percentages are equal</td></tr>
+          <tr><td class="c">Negative</td><td class="c">E<sub>I</sub> &lt; 0</td><td>demand and income move in opposite directions</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout tip"><span class="t">Classifying goods by income elasticity (must be memorised)</span>
+      E<sub>I</sub> &gt; 0 → <b>normal good</b>; E<sub>I</sub> &lt; 0 → <b>inferior good</b>; among normal goods E<sub>I</sub> &gt; 1 → <b>luxury</b>, 0 &lt; E<sub>I</sub> &lt; 1 → <b>necessity</b>.</div>
+
+      <h4 class="sub">3. Cross elasticity of demand E<sub>xy</sub></h4>
+      <ul class="tight">
+        <li><b>Meaning</b>: the ratio of the percentage change in the demand for one of two related goods to the percentage change in the price of the other.</li>
+        <li><b>Complementary relation</b> (they move in opposite directions) → the cross elasticity is <b>negative</b>; <b>substitute relation</b> (they move in the same direction) → the cross elasticity is <b>positive</b>; unrelated goods → <b>zero</b>.</li>
+        <li>The larger the absolute value, the closer the complementarity / the stronger the substitution; conversely, the sign of the coefficient can be used to infer the relationship between the goods.</li>
+      </ul>
+
+      <h4 class="sub">4. Price elasticity of supply ES</h4>
+      <div class="formula">E<sub>S</sub> = % change in quantity supplied ÷ % change in price (the computation of point and arc elasticity is exactly the same as for demand elasticity)</div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Type</th><th class="c">Coefficient</th><th>Meaning / curve</th></tr></thead>
+        <tbody>
+          <tr><td class="c">Perfectly elastic</td><td class="c">E<sub>S</sub> → ∞</td><td>supply is unlimited at the given price; horizontal line</td></tr>
+          <tr><td class="c">Elastic</td><td class="c">E<sub>S</sub> &gt; 1</td><td>the % change in supply exceeds the % change in price; upward-sloping and flatter</td></tr>
+          <tr><td class="c">Unit elastic</td><td class="c">E<sub>S</sub> = 1</td><td>the two ratios are equal; <b>every supply curve through the origin has an elasticity of 1</b></td></tr>
+          <tr><td class="c">Inelastic</td><td class="c">0 &lt; E<sub>S</sub> &lt; 1</td><td>the % change in supply is less than the % change in price; steep</td></tr>
+          <tr><td class="c">Perfectly inelastic</td><td class="c">E<sub>S</sub> = 0</td><td>quantity supplied does not change however the price changes; vertical line</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout info"><span class="t">The 5 factors that determine the price elasticity of supply</span>
+      ① <b>The length of the period (the most important)</b>: in the short run only variable factors (labour, raw materials) can be adjusted and plant and equipment cannot → inelastic; in the long run all factors are adjustable → elastic.<br>
+      ② <b>The ease of production and the length of the production cycle</b>: easy to produce and short cycles → elastic.<br>
+      ③ <b>The type of production technology</b>: capital-intensive technology cannot easily be scaled → inelastic; labour-intensive → elastic.<br>
+      ④ <b>The supply elasticity of the factors of production</b>: the more elastic the factors, the more elastic the product.<br>
+      ⑤ <b>The size of current output</b>: when output is very small it is easy to expand → elastic; as it approaches its limit, elasticity tends to 0.
+      </div>
+      <div class="callout info"><span class="t">The short run and the long run in micro-economics</span>
+      <b>Short run</b>: a period in which not all factors of production can be adjusted in order to reach a given level of output; <b>long run</b>: a period in which all factors of production can be adjusted.
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch2-5">5. Applications of elasticity theory</h3>
+    <div class="card">
+      <h4 class="sub">1. Price changes and total revenue TR = P × Q</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Demand elasticity</th><th class="c">Relationship between price and TR</th><th>Typical application</th></tr></thead>
+        <tbody>
+          <tr><td class="c">E<sub>d</sub> &gt; 1 (elastic)</td><td class="c"><span class="tag t-down">opposite</span></td><td><b>low margin, high volume</b> (luxury taxes, high cinema ticket prices)</td></tr>
+          <tr><td class="c">0 &lt; E<sub>d</sub> &lt; 1 (inelastic)</td><td class="c"><span class="tag t-up">same</span></td><td><b>“cheap grain hurts the farmer”</b> (dumping surplus milk, resentment of price rises under inflation)</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="formula">
+<span class="c">Example (elastic):</span> cars E<sub>d</sub> = 2, P₁ = 100,000 → Q₁ = 10,000, TR₁ = 1,000,000,000; the price falls to P₂ = 90,000 → Q₂ = 12,000, TR₂ = 1,080,000,000 (price down, quantity up, total revenue rises)
+      </div>
+
+      <h4 class="sub">2. The cobweb theorem</h4>
+      <ul class="tight">
+        <li><b>Origin</b>: proposed in the 1930s by Schultz (USA) and Ricchi (Italy); named in 1934 by Kaldor, because the diagram resembles a spider's web. <b>Core proposition</b>: once supply–demand equilibrium has been disturbed, market forces <b>need not</b> restore equilibrium automatically.</li>
+        <li><b>Basic assumptions</b>: ① current output determines the current price P<sub>t</sub> = f(Q<sub>t</sub><sup>S</sup>); ② the current price determines next period's output Q<sup>S</sup><sub>t+1</sub> = f(P<sub>t</sub>).</li>
+      </ul>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Type</th><th class="c">Elasticity relation</th><th>Price and output</th><th class="c">Reality</th></tr></thead>
+        <tbody>
+          <tr><td class="c">Convergent cobweb</td><td class="c">E<sub>S</sub> &lt; E<sub>d</sub></td><td>price and output move ever closer to the equilibrium price and quantity</td><td class="c">—</td></tr>
+          <tr><td class="c">Divergent cobweb</td><td class="c">E<sub>S</sub> &gt; E<sub>d</sub></td><td>price and output move ever further away from equilibrium</td><td class="c">agricultural products</td></tr>
+          <tr><td class="c">Closed cobweb</td><td class="c">E<sub>S</sub> = E<sub>d</sub></td><td>neither moving further away nor converging</td><td class="c">—</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout tip"><span class="t">Two ways to stabilize agricultural prices</span>
+      ① apply a <b>support price</b> to agricultural products; ② use <b>futures trading</b> for agricultural products — when the spot price is low, traders expect future price increases and buy heavily, pushing the spot price up; when the spot price is high the reverse happens, so prices are stabilized.</div>
+
+      <h4 class="sub">3. The sharing of a government tax</h4>
+      <ul class="tight">
+        <li><b>Direct tax</b>: levied on property and income; the taxpayer is the bearer of the tax and it <b>cannot be shifted</b>.</li>
+        <li><b>Indirect tax</b>: levied on goods and services; the taxpayer is not entirely the bearer of the tax and it <b>can be shifted</b>; divided into <b>specific (per-unit) taxes</b> and <b>ad valorem taxes</b>.</li>
+        <li><b>The effect of a specific tax</b>: the supply curve <b>shifts vertically upward by T</b>, the demand curve is unchanged → the equilibrium price rises and the equilibrium quantity falls.</li>
+      </ul>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Elasticity relation</th><th>Distribution of the burden</th></tr></thead>
+        <tbody>
+          <tr><td class="c">E<sub>d</sub> &gt; E<sub>S</sub></td><td>the tax is <b>borne mainly by producers</b>; the more elastic demand is, the more producers bear; with perfectly elastic demand producers bear all of it</td></tr>
+          <tr><td class="c">E<sub>d</sub> &lt; E<sub>S</sub></td><td>the tax is <b>borne mainly by consumers</b>; the more elastic supply is, the more consumers bear; with perfectly elastic supply consumers bear all of it</td></tr>
+          <tr><td class="c">E<sub>d</sub> = E<sub>S</sub></td><td>producers and consumers <b>share the burden equally</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="formula">
+Consumer burden = price paid after tax − price paid before tax = P₁ − P₀<br>
+Producer burden = sales revenue before tax − sales revenue after tax = P₀ − (P₁ − T) = P₀ − P₂
+      </div>
+      <div class="formula">
+<span class="c">Example:</span> Q<sub>d</sub> = 120 − 4P, Q<sub>s</sub> = −20 + 3P ⇒ 120 − 4P = −20 + 3P ⇒ <em>P₀ = 20, Q₀ = 40</em><br>
+a tax of 7 per unit ⇒ new supply Q<sub>s</sub> = −20 + 3(P − 7) = −41 + 3P ⇒ 120 − 4P = −41 + 3P ⇒ <em>P = 23, Q = 28</em><br>
+Consumer burden = 23 − 20 = <em>3</em>; producer burden = 7 − 3 = <em>4</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHAPTER 3 ================= -->
+  <section class="chapter" id="ch3">
+    <div class="chapter-head">
+      <div class="kicker">Chapter 3</div>
+      <h2>Chapter 3 Theory of Consumer Behaviour</h2>
+      <p>Utility theory · Cardinal utility theory (marginal utility analysis) · Ordinal utility theory (indifference curve analysis) · Substitution effect and income effect · Price consumption curve and income consumption curve</p>
+    </div>
+
+    <h3 class="sec" id="ch3-1">1. Utility theory</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>The meaning of utility</b>: the degree of satisfaction a consumer obtains from consuming a given good.<br>
+      <b>Utility versus use value</b>: use value is <b>objective</b> (the physical properties of a good that satisfy a want); utility is <b>subjective</b> and varies with person, with time and with place.</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>Cardinal utility theory</b> (Jevons, Walras): utility is <b>measurable and additive</b>, so it can be expressed in cardinal numbers → method of analysis: the <b>marginal utility analysis</b>.</div></div>
+      <div class="kp"><span class="num">3</span><div class="bd"><b>Ordinal utility theory</b> (Pareto, Hicks): utility as a psychological feeling <b>cannot be measured and cannot be added up</b>; only its relative ordering can be expressed, in ordinal numbers → method of analysis: the <b>indifference curve analysis</b>.</div></div>
+      <div class="kp"><span class="num">4</span><div class="bd"><b>The challenge that utility theory poses to traditional theory</b>: ① it reinterprets the meaning of exchange; ② it questions the determination of price by value (a product that is not a labour product still has a price; a high value may go with a low price; the problem of decomposing labour; prices need not fluctuate around a value axis); ③ the way to make money is to create utility; ④ marginal utility determines price.<br>
+      <b>Conclusion</b>: price is determined jointly by labour value and utility — <b>utility sets the upper bound of price and the producer's cost sets the lower bound</b>.</div></div>
+    </div>
+
+    <h3 class="sec" id="ch3-2">2. Cardinal utility theory — the marginal utility analysis</h3>
+    <div class="card">
+      <div class="formula">
+Total utility TU = f(X) or f(X, Y); <em>marginal utility MU</em> = the increase in total utility from consuming one additional unit of the good<br>
+TU = ΣMU; <em>MU &gt; 0 → TU increases</em>; <em>MU &lt; 0 → TU decreases</em>; <em>MU = 0 → TU is at a maximum</em>
+      </div>
+      <ul class="tight">
+        <li><b>Economic good</b>: consuming more raises total utility (MU &gt; 0); <b>economic bad</b>: consuming more lowers total utility (MU &lt; 0); <b>economically neutral good</b>: MU = 0.</li>
+      </ul>
+
+      <h4 class="sub">The law of diminishing marginal utility</h4>
+      <p><b>Meaning</b>: within a given period, holding the consumption of other goods constant, as the consumption of a given good increases, the marginal utility obtained from <b>each successive additional unit consumed</b> always diminishes (even the finest dish loses its appeal when one has eaten too much of it).</p>
+      <p><b>Causes</b>: ① physiological or psychological reasons (the stimulating effect becomes weaker); ② the diversity of uses of a good (uses are always ranked from the most important to the less important and then again to the more important). <b>Exceptions</b>: goods that work as a matched set, and goods for which one has an irresistible craving.</p>
+
+      <h4 class="sub">Consumer equilibrium</h4>
+      <ul class="tight">
+        <li><b>Meaning</b>: given income and the prices of goods, the state in which the consumer attains the <b>maximum utility</b> from consuming a given quantity of goods.</li>
+        <li><b>Three assumptions</b>: ① the tastes of the consumer are given; ② income is given, and the marginal utility of each unit of money is the same; ③ the prices of goods are given.</li>
+        <li><b>Condition</b>: the consumer spends <b>all of his income</b> on buying various goods, and <b>the ratio of marginal utility to price is the same for every good</b>.</li>
+      </ul>
+      <div class="formula">
+<em>MU<sub>X</sub> / P<sub>X</sub> = MU<sub>Y</sub> / P<sub>Y</sub> = λ</em> (λ = the marginal utility of a unit of money)<br>
+<span class="c">Proof (Lagrange / marginal substitution):</span> take the <b>partial derivatives</b> of a multivariable function, treating the other variables as constants when differentiating with respect to one variable<br>
+<span class="c">Example:</span> I = 100, P<sub>X</sub> = 10, P<sub>Y</sub> = 20 → equilibrium solution (X = 4, Y = 3), total utility 29 is at a maximum
+      </div>
+
+      <h4 class="sub">The law of diminishing marginal utility and the law of demand</h4>
+      <p>The price a consumer is willing to pay depends on marginal utility: the larger the MU, the higher the price he is willing to pay. If MU diminishes while the marginal utility of money λ stays constant ⇒ a fall in price ⇒ quantity demanded and price move in opposite directions.</p>
+      <div class="formula">MU = λ × P ⇒ <em>P = MU / λ</em> (MU diminishing and λ constant ⇒ P falls)</div>
+
+      <h4 class="sub">Consumer surplus and producer surplus</h4>
+      <ul class="tight">
+        <li><b>Consumer surplus</b> (introduced by Marshall): the difference between the <b>total amount the consumer is willing to pay</b> for a given quantity of a good and the <b>total amount actually paid</b>. Graphically: the area between the demand curve and the price line; as consumption increases, the consumer surplus of each additional unit diminishes.</li>
+        <li><b>Producer surplus</b>: the difference between the <b>total amount producers are willing to accept</b> and the <b>total amount actually received</b> at the market price (the area between the supply curve and the price line).</li>
+        <li><b>Social welfare</b> = consumer surplus + producer surplus (= total surplus).</li>
+      </ul>
+    </div>
+
+    <h3 class="sec" id="ch3-3">3. Ordinal utility theory — the indifference curve analysis</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>The indifference curve (an iso-utility curve)</b>: a curve showing the combinations of different quantities of two goods that give the consumer <b>exactly the same utility</b>.</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>Three basic assumptions</b>: ① completeness of preferences; ② transitivity of preferences (A&gt;B, B&gt;C ⇒ A&gt;C); ③ non-satiation of preferences (“more is better” — all goods are economic goods).</div></div>
+      <div class="kp"><span class="num">3</span><div class="bd"><b>Four characteristics</b>: ① it slopes down to the right and its slope is negative; ② there are infinitely many in a given plane, and <b>the farther from the origin, the higher the utility</b>; ③ <b>no two of them can intersect</b> (otherwise “more is better” would be contradicted); ④ in general they are <b>convex to the origin</b> (as determined by the diminishing marginal rate of substitution).</div></div>
+
+      <h4 class="sub">The marginal rate of substitution MRS</h4>
+      <ul class="tight">
+        <li><b>Meaning</b>: the amount of Y the consumer must give up in order to gain one more unit of X while keeping total utility constant; <b>it is exactly the slope of the indifference curve at that point</b> (found by drawing the tangent).</li>
+        <li><b>The law of diminishing marginal rate of substitution</b>: holding total utility constant, as consumption of X keeps increasing, each additional unit of X replaces less and less Y (note: what diminishes is the <b>absolute value</b>).</li>
+        <li><b>Cause</b>: diminishing marginal utility — the MU of X becomes smaller while the MU of Y becomes larger.</li>
+        <li><b>Relation to the shape of the curve</b>: a diminishing MRS ⇒ the curve is steeper in its upper-left segment and flatter in its lower-right segment ⇒ <b>convex to the origin</b>. A straight line (perfect substitutes) does not satisfy diminishing MRS; a curve concave to the origin does not satisfy it either.</li>
+        <li><b>Special cases</b>: perfect substitutes (e.g. banknotes and coins) → a straight line; perfect complements (e.g. lenses and frames) → right angles.</li>
+      </ul>
+
+      <h4 class="sub">The budget constraint line (the consumption constraint line, the consumption possibility line)</h4>
+      <div class="formula">
+<em>I = X·P<sub>X</sub> + Y·P<sub>Y</sub></em> (slope = −P<sub>X</sub>/P<sub>Y</sub>; intercepts: I/P<sub>X</sub> on the X axis, I/P<sub>Y</sub> on the Y axis)
+      </div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>Case</th><th class="c">Change in the budget line</th></tr></thead>
+        <tbody>
+          <tr><td>Prices unchanged, income changes</td><td class="c"><span class="tag t-flat">parallel shift</span></td></tr>
+          <tr><td>Income unchanged, both prices change in the same direction and by the same proportion</td><td class="c"><span class="tag t-flat">parallel shift</span></td></tr>
+          <tr><td>Income unchanged, one price unchanged and the other changes</td><td class="c"><span class="tag t-key">pivot (fan-shaped change)</span></td></tr>
+          <tr><td>Income unchanged, the two prices move in opposite directions</td><td class="c"><span class="tag t-key">swing (pendulum change)</span></td></tr>
+          <tr><td>Income and both prices change in the same direction and by the same proportion</td><td class="c"><span class="tag t-flat">unchanged</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h4 class="sub">Consumer equilibrium under the ordinal approach</h4>
+      <ul class="tight">
+        <li><b>Conclusion</b>: the combination of goods corresponding to <b>the point of tangency between the budget constraint line and an indifference curve</b> is the consumer equilibrium point.</li>
+        <li><b>Reason</b>: indifference curves outside the budget line have higher utility but are unattainable; those inside it are attainable but do not maximize utility; hence equilibrium must lie on the budget line, and only the tangency point maximizes utility along that line.</li>
+        <li><b>Two conditions</b>: ① the equilibrium point lies on the budget constraint line: I = X·P<sub>X</sub> + Y·P<sub>Y</sub>; ② the two lines have equal slopes at the tangency point: slope of the budget line = slope of the indifference curve (MRS) ⇒ P<sub>X</sub>/P<sub>Y</sub> = MRS<sub>XY</sub> = MU<sub>X</sub>/MU<sub>Y</sub>.</li>
+        <li><b>Comparison with the cardinal approach</b>: MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub> and MRS<sub>XY</sub> = P<sub>X</sub>/P<sub>Y</sub> are equivalent; <b>the equilibrium conditions are the same, only the method of analysis differs</b>.</li>
+      </ul>
+
+      <h4 class="sub">Equilibrium under special indifference curves (frequently examined)</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Case</th><th>Equilibrium point</th></tr></thead>
+        <tbody>
+          <tr><td class="c">Perfect substitutes</td><td>if the slope of the indifference curve is <b>&gt;</b> the slope of the budget line → the equilibrium point lies on the <b>horizontal axis</b> (only the good on the horizontal axis is bought); if the slope is <b>&lt;</b> the slope of the budget line → the equilibrium point lies on the <b>vertical axis</b>; if the two are equal → <b>every point on the budget line</b> is an equilibrium. This is called a <b>boundary (or corner) equilibrium</b></td></tr>
+          <tr><td class="c">Perfect complements</td><td>the equilibrium point is the combination of goods corresponding to the <b>corner (kink)</b> of the budget constraint line and the indifference curve</td></tr>
+          <tr><td class="c">Concave to the origin</td><td>the tangency point is the <b>point of minimum utility</b>, and the equilibrium point is a <b>boundary equilibrium</b> (as with collectibles)</td></tr>
+          <tr><td class="c">Special convexity to the origin</td><td>because of an income constraint, or because of the ratio of price to utility, only one of the two goods is bought or preferred → a <b>boundary equilibrium</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch3-4">4. Substitution effect, income effect, price effect · consumption curves</h3>
+    <div class="card">
+      <h4 class="sub">1. Hicks's substitution effect, income effect and price effect (when the price falls)</h4>
+      <ul class="tight">
+        <li><b>Substitution effect</b>: when the prices of other goods are unchanged, the good whose price has fallen is relatively cheaper, and consumers substitute it for the more expensive good and increase their demand for it → <b>the substitution effect &gt; 0 (opposite to the price)</b>. In the analysis, <b>real income is assumed to be constant (utility constant)</b>.</li>
+        <li><b>Income effect</b>: with nominal income unchanged, a fall in the price raises real income, thereby increasing demand for the good. The analysis considers only the <b>change in real income</b>.</li>
+        <li><b>Price effect</b> = substitution effect + income effect, i.e. the increase in quantity demanded caused by the fall in price.</li>
+      </ul>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">Category of good</th><th class="c">Price change</th><th class="c">Substitution effect</th><th class="c">Income effect</th><th class="c">Comparison</th><th class="c">Price effect</th></tr></thead>
+        <tbody>
+          <tr><td class="c">Normal good</td><td class="c">−</td><td class="c">+</td><td class="c">+</td><td class="c">—</td><td class="c"><span class="tag t-up">+</span></td></tr>
+          <tr><td class="c">Inferior good</td><td class="c">−</td><td class="c">+</td><td class="c">−</td><td class="c">|substitution| &gt; |income|</td><td class="c"><span class="tag t-up">+</span></td></tr>
+          <tr><td class="c">Giffen good</td><td class="c">−</td><td class="c">+</td><td class="c">−</td><td class="c">|substitution| &lt; |income|</td><td class="c"><span class="tag t-down">−</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout trap"><span class="t">A reminder of a common pitfall</span>When the price of a Giffen good falls, quantity demanded <b>decreases</b>, because the absolute value of the negative income effect exceeds the substitution effect — this is the only exception to the law of demand.</div>
+
+      <h4 class="sub">2. The price consumption curve (PCC) and the demand curve</h4>
+      <ul class="tight">
+        <li><b>The price consumption curve</b>: the locus of the tangency points between a number of budget constraint lines and a number of indifference curves, traced out as the price of a good changes while income and the prices of other goods remain constant; every point on the curve is a consumer equilibrium.</li>
+        <li><b>Deriving the demand curve from the PCC</b>: as the price of X changes, the equilibrium quantity moves in the opposite direction to price ⇒ the demand curve slopes down to the right; every point on the demand curve shows the quantity demanded that yields the maximum utility at the corresponding price.</li>
+      </ul>
+
+      <h4 class="sub">3. The income consumption curve (ICC) and the Engel curve</h4>
+      <ul class="tight">
+        <li><b>The income consumption curve</b>: the locus of the tangency points between a number of budget constraint lines and a number of indifference curves, traced out as income changes while the prices of goods remain constant; every point on the curve is a consumer equilibrium.</li>
+        <li><b>The Engel curve</b>: a curve showing the relationship between the consumer's income and the quantity demanded of a given good. For a normal good it slopes up to the right; for an inferior good it slopes up to the left.</li>
+        <li><b>Engel's law</b>: as income keeps rising, <b>the share of food expenditure in household expenditure keeps falling</b>, while the share of other expenditure keeps rising. The lower the Engel coefficient, the higher the standard of living.</li>
+      </ul>
+      <div class="callout info"><span class="t">The Engel coefficient and the standard of living (standard empirical benchmarks)</span>above 59%: poverty; 50%–59%: subsistence; 40%–50%: comfortably off; 30%–40%: affluent; below 30%: the most affluent. In 2019 the figure for China was <b>28.2%</b>.</div>
+    </div>
+  </section>
+
+  <!-- ================= FORMULA SHEET ================= -->
+  <section class="chapter" id="formulas">
+    <div class="chapter-head">
+      <div class="kicker">Formula Sheet</div>
+      <h2>Formula Sheet</h2>
+      <p>The 20 core formulas and decision rules that can be applied directly in the examination</p>
+    </div>
+    <div class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>#</th><th>Formula / decision rule</th><th>Application and notes</th></tr></thead>
+        <tbody>
+          <tr><td class="c">1</td><td>Equilibrium: Q<sub>d</sub> = Q<sub>s</sub></td><td>solve for the equilibrium price P₀ and the equilibrium quantity Q₀</td></tr>
+          <tr><td class="c">2</td><td>Demand function D = a − bP</td><td>a and b are positive; the law of demand</td></tr>
+          <tr><td class="c">3</td><td>Supply function S = −c + dP</td><td>c and d are positive</td></tr>
+          <tr><td class="c">4</td><td>Point price elasticity of demand E<sub>d</sub> = (dQ/dP)(P/Q)</td><td>use the absolute value; points in the upper left are more elastic</td></tr>
+          <tr><td class="c">5</td><td>Arc price elasticity of demand E<sub>d</sub> = (ΔQ/ΔP)(P̄/Q̄)</td><td>use the absolute value; point elasticity is a special case of arc elasticity</td></tr>
+          <tr><td class="c">6</td><td>Income elasticity of demand E<sub>I</sub> = (ΔQ/Q)/(ΔI/I)</td><td>E<sub>I</sub>&gt;0 normal good; &lt;0 inferior good</td></tr>
+          <tr><td class="c">7</td><td>Cross elasticity of demand E<sub>xy</sub> = (ΔQ<sub>x</sub>/Q<sub>x</sub>)/(ΔP<sub>y</sub>/P<sub>y</sub>)</td><td>negative = complements, positive = substitutes</td></tr>
+          <tr><td class="c">8</td><td>Price elasticity of supply E<sub>S</sub> = (ΔQ/Q)/(ΔP/P)</td><td>long run &gt; short run</td></tr>
+          <tr><td class="c">9</td><td>Total revenue TR = P × Q</td><td>E<sub>d</sub>&gt;1 moves opposite to price; E<sub>d</sub>&lt;1 moves in the same direction</td></tr>
+          <tr><td class="c">10</td><td>Supply after tax S₁ = S + T (a vertical shift up by T)</td><td>consumer burden = P₁−P₀; producer burden = P₀−(P₁−T)</td></tr>
+          <tr><td class="c">11</td><td>Condition for a convergent cobweb E<sub>S</sub> &lt; E<sub>d</sub></td><td>divergent: E<sub>S</sub>&gt;E<sub>d</sub>; closed: equal</td></tr>
+          <tr><td class="c">12</td><td>Total utility TU = ΣMU</td><td>MU&gt;0→TU rises; MU=0→TU is at a maximum</td></tr>
+          <tr><td class="c">13</td><td>Consumer equilibrium (cardinal approach) MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub> = λ</td><td>all income is spent</td></tr>
+          <tr><td class="c">14</td><td>MU = λP ⇒ P = MU/λ</td><td>diminishing marginal utility ⇒ the law of demand</td></tr>
+          <tr><td class="c">15</td><td>Consumer surplus = willingness to pay − actual payment</td><td>producer surplus is the mirror image</td></tr>
+          <tr><td class="c">16</td><td>MRS<sub>XY</sub> = MU<sub>X</sub>/MU<sub>Y</sub> = the slope of the indifference curve</td><td>a diminishing absolute value ⇒ convex to the origin</td></tr>
+          <tr><td class="c">17</td><td>Budget constraint line I = X·P<sub>X</sub> + Y·P<sub>Y</sub></td><td>slope = −P<sub>X</sub>/P<sub>Y</sub></td></tr>
+          <tr><td class="c">18</td><td>Ordinal equilibrium: I = XP<sub>X</sub>+YP<sub>Y</sub> and MRS = P<sub>X</sub>/P<sub>Y</sub></td><td>tangency condition</td></tr>
+          <tr><td class="c">19</td><td>Price effect = substitution effect + income effect</td><td>Giffen good: |substitution| &lt; |income| ⇒ the price effect is negative</td></tr>
+          <tr><td class="c">20</td><td>Engel coefficient = food expenditure / total expenditure</td><td>the lower the coefficient, the higher the standard of living</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SELF-TEST ================= -->
+  <section class="chapter" id="quiz">
+    <div class="chapter-head">
+      <div class="kicker">Self-Test</div>
+      <h2>Self-Test Questions (36)</h2>
+      <p>Click “Show answer” for each question to read the explanation; it is recommended that you answer independently first and then check your mistakes against the explanations.</p>
+    </div>
+
+    <div class="card" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <button class="btn primary" onclick="checkAll()">Grade this set</button>
+      <button class="btn" onclick="resetAll()">Redo all</button>
+      <button class="btn" onclick="showAll()">Show all explanations</button>
+      <span class="score" id="scoreBox">Score: 0 / 0</span>
+    </div>
+
+    <div id="quizBox"></div>
+  </section>
+
+  </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Micro-economics Review · Chapters 1–3 · Compiled from the courseware</span>
+    <span>Chinese version: <a href="index.html">index.html</a></span>
+  </div>
+</footer>
+
+<script>
+const QUESTIONS = [
+  // ---------- CHAPTER 1 ----------
+  {c:"Chapter 1", q:"The subject of study of economics is ( ).", o:["the allocation and utilization of scarce resources","the method of accounting for GDP","the causes of rising prices","the adjustment of the industrial structure"], a:0,
+   e:"Economics is the discipline that studies <b>the allocation and utilization of scarce resources under the market economic system</b>. Scarcity — choice — use is the thread running through it."},
+  {c:"Chapter 1", q:"Which of the following statements about scarcity is correct ( ).", o:["Scarcity means that resources are absolutely insufficient in quantity","The more resources there are, the less scarce they are","Scarcity refers only to technological conditions","Scarcity means the finiteness of resources relative to the unlimited range of human wants"], a:3,
+   e:"Scarcity has two meanings: ① resources are finite relative to wants; ② resources are scarce relative to other resources. Resource abundance does not mean the absence of scarcity."},
+  {c:"Chapter 1", q:"“What to produce, how to produce, and for whom to produce” are collectively called ( ).", o:["an economic model","marginal analysis","general equilibrium","the allocation problem"], a:3,
+   e:"These three questions are collectively called the <b>allocation problem</b>; “what to produce and how much” corresponds to the production possibilities frontier."},
+  {c:"Chapter 1", q:"The core theory of micro-economics is ( ).", o:["the theory of national income determination","growth theory","the quantity theory of money","the theory of price"], a:3,
+   e:"Micro: the core theory is the theory of price and the method is microeconomic analysis; macro: the core theory is the theory of national income determination and the method is macroeconomic analysis."},
+  {c:"Chapter 1", q:"The three basic assumptions of micro-economics are ( ).", o:["market clearing, perfect rationality, perfect information","perfect competition, perfect rationality, perfect information","market failure, bounded rationality, information asymmetry","economies of scale, declining costs, marginal returns"], a:0,
+   e:"① market clearing; ② perfect rationality (perfectly self-interested and acting on the maximization principle); ③ perfect information (information is plentiful, symmetric and costless to obtain)."},
+  {c:"Chapter 1", q:"Regarding endogenous and exogenous variables, which of the following statements is correct ( ).", o:["An endogenous variable is the same as an independent variable","An exogenous variable is the same as a dependent variable","In Q=a−bP, a and b are exogenous variables","An endogenous variable is one the theory seeks to explain, while an exogenous variable is determined by factors outside the theory"], a:3,
+   e:"Endogenous/exogenous ≠ independent/dependent. In Q=a−bP, P is the independent variable and Q the dependent variable, and both are endogenous; a and b are constants; it is consumption policy, income, consumption preferences and the like that are exogenous."},
+  {c:"Chapter 1", q:"The difference between positive analysis and normative analysis lies in ( ).", o:["whether mathematics is used","whether prices are studied","whether perfect rationality is assumed","answering “what is the case” rather than “what ought to be the case”"], a:3,
+   e:"Positive analysis answers “what is the case”, taking the facts as they are and carrying no value judgement; normative analysis answers “what ought to be the case” and is based on value judgements."},
+  {c:"Chapter 1", q:"“Comparing the resulting static equilibria after the original conditions have changed” belongs to ( ).", o:["static analysis","dynamic analysis","equilibrium analysis","comparative static analysis"], a:3,
+   e:"Comparative static analysis compares only the results; dynamic analysis introduces the time factor to study the transition process; static analysis studies only the conditions for equilibrium to arise."},
+  {c:"Chapter 1", q:"The author of The Wealth of Nations (1776) and his main contribution are ( ).", o:["Keynes, macroeconomic theory","Marshall, the theory of the equilibrium price","Samuelson, the neo-classical synthesis","Adam Smith, the labour theory of value and the idea of laissez-faire"], a:3,
+   e:"Smith's The Wealth of Nations marks the first revolution in the history of economics; his contributions include the labour theory of value and the idea of laissez-faire."},
+  {c:"Chapter 1", q:"What is known as “the second revolution in the history of economics”?", o:["Keynes's The General Theory","the theory of the equilibrium price under supply and demand","the marginal utility theory","the theory of monopolistic competition"], a:2,
+   e:"The marginal utility theory, proposed by Menger, Jevons and Walras in the 1870s, is the second revolution; Marshall's Principles of Economics built the modern microeconomic system; Keynes's The General Theory is the third revolution."},
+
+  // ---------- CHAPTER 2 ----------
+  {c:"Chapter 2", q:"Demand is the quantity of goods that consumers, at each price level in a given period, ( ).", o:["are willing to buy","are able to buy","are willing and able to buy","have previously bought"], a:2,
+   e:"Demand is <b>the unity of the desire to purchase and the ability to pay</b>; it is actual rather than potential demand. The same applies to supply."},
+  {c:"Chapter 2", q:"When the price of a good rises, the demand for its complement will ( ).", o:["increase","stay unchanged","decrease","first rise and then fall"], a:2,
+   e:"A price change for a complement (cars–petrol) causes the demand for the other good to move in the <b>opposite direction</b>; for substitutes (pork–poultry and fish) the movement is in the same direction."},
+  {c:"Chapter 2", q:"On a demand curve, a change in the price of the good itself causes ( ).", o:["a shift of demand","a shift of supply","a change in quantity demanded","a change in the equilibrium quantity"], a:2,
+   e:"A change in the price itself → <b>a movement along the same demand curve</b> (a change in quantity demanded); a change in other factors → <b>a shift of the whole curve</b> (a change in demand)."},
+  {c:"Chapter 2", q:"The exception to the law of demand is ( ).", o:["Giffen goods","luxuries","durables","normal goods"], a:0,
+   e:"For a Giffen good the quantity demanded rises when the price rises (an inferior good whose income effect outweighs the substitution effect)."},
+  {c:"Chapter 2", q:"Given Q<sub>d</sub> = 22 − 5P, Q<sub>s</sub> = −5 + 4P, the equilibrium price and the equilibrium quantity are ( ).", o:["P=3, Q=7","P=7, Q=3","P=27, Q=−113","P=2.7, Q=8.5"], a:0,
+   e:"Set Q<sub>d</sub>=Q<sub>s</sub>: 22−5P = −5+4P ⇒ 9P = 27 ⇒ P = 3, Q = 22−15 = 7."},
+  {c:"Chapter 2", q:"With supply unchanged, a decrease in demand will cause the equilibrium price and the equilibrium quantity to ( ).", o:["both rise","the price to rise and the quantity to fall","both fall","the price to fall and the quantity to rise"], a:2,
+   e:"The laws of demand and supply: with supply unchanged, a change in demand moves P and Q in the <b>same direction</b>; with demand unchanged, a change in supply moves P in the <b>opposite direction</b> and Q in the same direction."},
+  {c:"Chapter 2", q:"The characteristic of a support price (price floor) is ( ).", o:["it is set above the equilibrium price, producing excess demand","it is set equal to the equilibrium price","it is set below the equilibrium price, producing excess supply","it is formed spontaneously by the market"], a:2,
+   e:"A support price P₁ &gt; P₀ ⇒ <b>excess supply</b>, and the government must purchase, subsidize or restrict the area planted; a price ceiling P₁ &lt; P₀ ⇒ <b>excess demand</b>, which requires rationing."},
+  {c:"Chapter 2", q:"If the price elasticity of a good is Ed &gt; 1, then the good ( ).", o:["is a necessity of life","has its price and total revenue moving in opposite directions","has a relatively steep demand curve","is an inferior good"], a:1,
+   e:"Ed &gt; 1 means elastic (luxuries, non-necessities); the curve is flatter, and price and total revenue move in <b>opposite directions</b> — “low margin, high volume”. Ed &lt; 1 means inelastic (necessities of life); price and total revenue move in the same direction — “cheap grain hurts the farmer”."},
+  {c:"Chapter 2", q:"If a good is a necessity of life, its price elasticity of demand can be inferred to be ( ).", o:["greater than 1","less than 1","equal to 1","equal to 0"], a:1,
+   e:"The more necessary a good is, the smaller (the more inelastic) its price elasticity of demand."},
+  {c:"Chapter 2", q:"When goods are classified by income elasticity, a good with E<sub>I</sub> &lt; 0 is ( ).", o:["a normal good","a luxury","a necessity","an inferior good"], a:3,
+   e:"E<sub>I</sub> &gt; 0 → normal good (&gt;1 luxury, 0–1 necessity); E<sub>I</sub> &lt; 0 → inferior good."},
+  {c:"Chapter 2", q:"Two goods are substitutes, so their cross price elasticity coefficient ( ).", o:["is positive","is negative","is zero","is greater than 1"], a:0,
+   e:"Complements → the cross elasticity is negative; substitutes → positive; unrelated goods → zero."},
+  {c:"Chapter 2", q:"The most important factor determining the price elasticity of supply is ( ).", o:["the type of production technology","the size of current output","the supply elasticity of the factors of production","the length of the period"], a:3,
+   e:"The length of the period is the most important: in the short run only variable factors (labour, raw materials) can be adjusted, so elasticity is small; in the long run all factors are adjustable, so elasticity is large."},
+  {c:"Chapter 2", q:"The condition for a convergent cobweb is ( ).", o:["E<sub>S</sub> &gt; E<sub>d</sub>","E<sub>S</sub> = E<sub>d</sub>","E<sub>S</sub> &lt; E<sub>d</sub>","E<sub>S</sub> · E<sub>d</sub> = 1"], a:2,
+   e:"Supply elasticity smaller than demand elasticity → price and output move ever closer to equilibrium (convergent); agricultural products are divergent because E<sub>S</sub> &gt; E<sub>d</sub>."},
+  {c:"Chapter 2", q:"Given Q<sub>d</sub> = 120 − 4P, Q<sub>s</sub> = −20 + 3P, if producers are taxed 7 per unit, the consumer bears ( ).", o:["3","4","7","0"], a:0,
+   e:"Supply after tax = −20 + 3(P−7) = −41+3P; combining, 120−4P = −41+3P ⇒ P = 23, Q = 28. The consumer bears 23−20 = 3 and producers bear 7−3 = 4."},
+  {c:"Chapter 2", q:"If demand is more elastic than supply, the tax is borne mainly by ( ).", o:["consumers","producers","both equally","the government"], a:1,
+   e:"The more elastic side “cannot escape”, so more of the burden falls on the less elastic side: E<sub>d</sub> &gt; E<sub>S</sub> → producers bear more; E<sub>S</sub> &gt; E<sub>d</sub> → consumers bear more; if they are equal, the burden is shared equally."},
+
+  // ---------- CHAPTER 3 ----------
+  {c:"Chapter 3", q:"In utility theory, ordinal utility theory was proposed by ( ).", o:["Jevons and Walras","Pareto and Hicks","Marshall and Keynes","Menger and Walras"], a:1,
+   e:"Cardinal utility theory: Jevons, Walras → marginal utility analysis; ordinal utility theory: Pareto, Hicks → indifference curve analysis."},
+  {c:"Chapter 3", q:"The law of diminishing marginal utility implies ( ).", o:["TU diminishes","MU diminishes","the price rises","the demand curve shifts right"], a:1,
+   e:"TU = ΣMU; when MU &gt; 0, TU still rises, but more and more slowly, so what diminishes is MU, not TU."},
+  {c:"Chapter 3", q:"Under cardinal utility theory, the condition for consumer equilibrium is ( ).", o:["MU<sub>X</sub> = MU<sub>Y</sub>","MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub>","P<sub>X</sub> = P<sub>Y</sub>","X = Y"], a:1,
+   e:"The marginal utility of a unit of money is equalized: MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub> = λ, and all income is spent."},
+  {c:"Chapter 3", q:"The reason indifference curves cannot intersect is ( ).", o:["completeness of preferences","transitivity of preferences","non-satiation of preferences (“more is better”)","the diminishing marginal rate of substitution"], a:2,
+   e:"If two curves intersect at a point, non-satiation yields a contradiction (at the intersection “more is better” must be preferred to either side), so they cannot intersect."},
+  {c:"Chapter 3", q:"The slope of an indifference curve represents ( ).", o:["the ratio of prices P<sub>X</sub>/P<sub>Y</sub>","the marginal rate of substitution MRS","marginal utility MU","marginal cost"], a:1,
+   e:"The MRS is exactly the slope of the indifference curve at that point (the slope of the tangent); it is the slope of the budget constraint line that equals P<sub>X</sub>/P<sub>Y</sub>. At equilibrium the two are equal."},
+  {c:"Chapter 3", q:"Under ordinal utility theory, the consumer equilibrium point is ( ).", o:["the tangency point of the budget line and an indifference curve","a point on an axis","the region between an indifference curve and the origin","a point outside the budget line"], a:0,
+   e:"The tangency point represents the maximum utility attainable under the budget constraint; outside the budget line it is unattainable, inside it utility is not at a maximum."},
+  {c:"Chapter 3", q:"If the consumer's income and prices are both unchanged, the budget constraint line is ( ).", o:["a straight line sloping down to the left","a straight line sloping up to the right","a vertical line","a horizontal line"], a:0,
+   e:"I = X·P<sub>X</sub> + Y·P<sub>Y</sub>, slope = −P<sub>X</sub>/P<sub>Y</sub> &lt; 0, a straight line sloping down to the left."},
+  {c:"Chapter 3", q:"When the price of a Giffen good falls, its price effect is negative because ( ).", o:["the substitution effect is negative","the income effect is negative and its absolute value exceeds the substitution effect","the substitution effect is zero","the demand curve shifts left"], a:1,
+   e:"A fall in price → the substitution effect is positive and the income effect is negative; when |income effect| &gt; |substitution effect| (the Giffen case), the two sum to a negative number and quantity demanded falls."},
+  {c:"Chapter 3", q:"The indifference curve of perfect complements is shaped like ( ).", o:["a convex curve sloping down to the right","a straight line","a right angle","a vertical line"], a:2,
+   e:"Perfect substitutes (e.g. banknotes and coins) → a straight line; perfect complements (e.g. lenses and frames) → a right angle, whose corner is the consumer equilibrium point."},
+  {c:"Chapter 3", q:"Engel's law states that, as income rises, ( ).", o:["the share of food expenditure in household expenditure falls","the share of food expenditure in household expenditure rises","the Engel coefficient rises","the demand for all goods rises in the same proportion"], a:0,
+   e:"Engel's law: as income rises the share of food expenditure falls and the share of other expenditure rises; the lower the Engel coefficient, the higher the standard of living (China, 2019: 28.2%)."},
+  {c:"Chapter 3", q:"Consumer surplus is ( ).", o:["the total amount the consumer actually pays","the difference between the total amount the consumer is willing to pay and the total amount actually paid","the profit obtained by the consumer","the opposite of producer surplus"], a:1,
+   e:"Consumer surplus = willingness to pay − actual payment; graphically it is the area between the demand curve and the price line; producer surplus is symmetric, and the two sum to social welfare."}
+];
+
+const LETTERS = ["A","B","C","D"];
+
+function render(){
+  const box = document.getElementById('quizBox');
+  let html = '';
+  let lastC = '';
+  QUESTIONS.forEach((q, i) => {
+    if (q.c !== lastC) {
+      lastC = q.c;
+      html += `<h4 class="sub" style="margin-top:26px">${q.c}</h4>`;
+    }
+    html += `<div class="quiz-card" data-qi="${i}">
+      <div class="q-head"><span class="q-no">Q${i+1}</span></div>
+      <div class="q-text">${q.q}</div>
+      <div class="opts">
+        ${q.o.map((o,j)=>`<label class="opt" data-j="${j}"><span class="mark">${LETTERS[j]}</span><input type="radio" name="q${i}" value="${j}"><span>${o}</span></label>`).join('')}
+      </div>
+      <div class="q-actions">
+        <button class="btn" onclick="toggleAnswer(${i})">Show answer</button>
+        <button class="btn" onclick="clearQ(${i})">Clear this answer</button>
+      </div>
+      <div class="explain" id="ex${i}"><b>Correct answer: ${LETTERS[q.a]}</b> —— ${q.e}</div>
+    </div>`;
+  });
+  box.innerHTML = html;
+  box.querySelectorAll('.opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const card = opt.closest('.quiz-card');
+      const qi = +card.dataset.qi;
+      const j = +opt.dataset.j;
+      card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+      card.querySelectorAll('input').forEach(r=>r.checked=false);
+      card.querySelector(`input[value="${j}"]`).checked = true;
+      opt.classList.add(j === QUESTIONS[qi].a ? 'correct' : 'wrong');
+      updateScore();
+    });
+  });
+}
+
+function toggleAnswer(i){
+  const ex = document.getElementById('ex'+i);
+  ex.classList.toggle('show');
+}
+function showAll(){
+  QUESTIONS.forEach((_,i)=>document.getElementById('ex'+i).classList.add('show'));
+}
+function clearQ(i){
+  const card = document.querySelector(`.quiz-card[data-qi="${i}"]`);
+  card.querySelectorAll('input').forEach(r=>r.checked=false);
+  card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+  document.getElementById('ex'+i).classList.remove('show');
+  updateScore();
+}
+function checkAll(){
+  QUESTIONS.forEach((q,i)=>{
+    const card = document.querySelector(`.quiz-card[data-qi="${i}"]`);
+    card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+    const checked = card.querySelector('input:checked');
+    if (checked) {
+      const j = +checked.value;
+      card.querySelectorAll('.opt')[j].classList.add(j===q.a?'correct':'wrong');
+    }
+    document.getElementById('ex'+i).classList.add('show');
+  });
+  updateScore();
+}
+function resetAll(){
+  document.querySelectorAll('.quiz-card').forEach(card=>{
+    card.querySelectorAll('input').forEach(r=>r.checked=false);
+    card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+  });
+  document.querySelectorAll('.explain').forEach(e=>e.classList.remove('show'));
+  updateScore();
+}
+function updateScore(){
+  let right = 0, answered = 0;
+  QUESTIONS.forEach((q,i)=>{
+    const card = document.querySelector(`.quiz-card[data-qi="${i}"]`);
+    const checked = card && card.querySelector('input:checked');
+    if (checked){ answered++; if (+checked.value === q.a) right++; }
+  });
+  document.getElementById('scoreBox').textContent = `Score: ${right} / ${QUESTIONS.length} (answered ${answered})`;
+}
+render();
+</script>
+</body>
+</html>

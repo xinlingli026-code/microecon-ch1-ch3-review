@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>微观经济学复习资料 · 第1–3章 | Micro-economics Review</title>
+<meta name="description" content="微观经济学第一至三章复习资料：知识点精讲、公式速查、图表辨析与自测题（中英双语）" />
+<style>
+  :root{
+    --paper:#f5f6f8;
+    --card:#ffffff;
+    --ink:#151a21;
+    --ink-2:#475569;
+    --ink-3:#7b8794;
+    --navy:#173357;
+    --navy-2:#24507f;
+    --accent:#b45309;
+    --accent-soft:#fef3c7;
+    --ok:#15803d;
+    --ok-soft:#dcfce7;
+    --bad:#b91c1c;
+    --bad-soft:#fee2e2;
+    --info:#1d4ed8;
+    --info-soft:#dbeafe;
+    --line:#e3e7ec;
+    --shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px -12px rgba(16,24,40,.16);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:88px}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.75;font-size:16px;
+  }
+  a{color:var(--navy-2)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;gap:16px;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);letter-spacing:.2px;white-space:nowrap}
+  .brand .mark{
+    width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--navy-2));
+    display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800
+  }
+  .topnav{display:flex;gap:4px;margin-left:auto;align-items:center;overflow-x:auto;scrollbar-width:none}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav a{
+    padding:6px 11px;border-radius:8px;font-size:14px;color:var(--ink-2);text-decoration:none;white-space:nowrap
+  }
+  .topnav a:hover{background:#eef2f7;color:var(--navy)}
+  .lang{
+    margin-left:8px;padding:6px 14px;border-radius:999px;background:var(--navy);color:#fff;
+    font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap
+  }
+  .lang:hover{background:var(--navy-2)}
+
+  /* ---------- hero ---------- */
+  .hero{background:linear-gradient(160deg,#102844 0%,#1c3f6b 55%,#275b91 100%);color:#eaf1f8;padding:46px 0 40px}
+  .hero h1{margin:0 0 10px;font-size:clamp(26px,4vw,38px);letter-spacing:-.4px}
+  .hero p{margin:0;max-width:760px;color:#c6d6e6;font-size:16px}
+  .hero .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+  .hero .meta span{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+    padding:4px 12px;border-radius:999px;font-size:13px
+  }
+  .hero .meta span b{color:#fff;font-weight:700}
+
+  /* ---------- layout ---------- */
+  .layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:34px;padding:34px 0 70px;align-items:start}
+  .toc{position:sticky;top:78px;font-size:14px;max-height:calc(100vh - 100px);overflow:auto}
+  .toc h4{margin:0 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .toc a{display:block;padding:5px 10px;border-radius:8px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent}
+  .toc a:hover{background:#fff;color:var(--navy);border-left-color:var(--navy-2)}
+  .toc a.lv2{padding-left:24px;font-size:13px;color:var(--ink-3)}
+
+  /* ---------- sections ---------- */
+  section.chapter{margin-bottom:52px;scroll-margin-top:84px}
+  .chapter-head{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden
+  }
+  .chapter-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--navy),var(--navy-2))}
+  .chapter-head .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .chapter-head h2{margin:4px 0 6px;font-size:25px;letter-spacing:-.3px}
+  .chapter-head p{margin:0;color:var(--ink-2);font-size:15px}
+
+  h3.sec{font-size:19px;margin:34px 0 14px;padding-left:12px;border-left:4px solid var(--navy);letter-spacing:-.2px}
+  h4.sub{font-size:16px;margin:22px 0 10px;color:var(--navy)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:14px}
+  .card > :first-child{margin-top:0}
+  .card > :last-child{margin-bottom:0}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+
+  ul.tight{margin:8px 0;padding-left:20px}
+  ul.tight li{margin:5px 0}
+  ol.tight{margin:8px 0;padding-left:20px}
+  ol.tight li{margin:5px 0}
+
+  .kp{display:flex;gap:12px;margin-bottom:10px}
+  .kp .num{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+    display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:2px
+  }
+  .kp .bd{flex:1}
+  .kp .bd b{color:var(--navy)}
+
+  .formula{
+    background:#0f2740;color:#e8f1fb;border-radius:10px;padding:13px 16px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    font-size:14.5px;overflow-x:auto;line-height:1.9;margin:12px 0
+  }
+  .formula .c{color:#8fb3d9}
+  .formula em{color:#fbbf24;font-style:normal}
+
+  .callout{border-radius:10px;padding:12px 15px;margin:12px 0;font-size:14.5px;border-left:4px solid}
+  .callout .t{font-weight:700;display:block;margin-bottom:3px}
+  .callout.warn{background:var(--accent-soft);border-color:var(--accent)}
+  .callout.trap{background:var(--bad-soft);border-color:var(--bad)}
+  .callout.tip{background:var(--ok-soft);border-color:var(--ok)}
+  .callout.info{background:var(--info-soft);border-color:var(--info)}
+
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#eef2f7;font-weight:700;color:var(--navy);font-size:14px}
+  tr:last-child td{border-bottom:none}
+  td.c,th.c{text-align:center}
+  .scroll{overflow-x:auto}
+
+  .tag{display:inline-block;padding:1px 9px;border-radius:999px;font-size:12.5px;font-weight:600;margin:1px 2px 1px 0;border:1px solid}
+  .t-up{background:var(--ok-soft);color:var(--ok);border-color:#bbf7d0}
+  .t-down{background:var(--bad-soft);color:var(--bad);border-color:#fecaca}
+  .t-flat{background:#eef2f7;color:var(--ink-2);border-color:#dbe1e8}
+  .t-key{background:var(--accent-soft);color:var(--accent);border-color:#fde68a}
+
+  figure{margin:14px 0}
+  figure svg{display:block;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+  figcaption{font-size:13px;color:var(--ink-3);margin-top:6px;text-align:center}
+
+  /* ---------- quiz ---------- */
+  .quiz-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+  .q-head{display:flex;gap:10px;align-items:baseline}
+  .q-no{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+  .q-text{margin:4px 0 12px;font-weight:600;font-size:15.5px}
+  .opts{display:grid;gap:8px}
+  .opt{
+    display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;
+    padding:9px 12px;cursor:pointer;transition:.15s;background:#fff;font-size:14.5px
+  }
+  .opt:hover{border-color:var(--navy-2);background:#f8fafc}
+  .opt .mark{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1px solid #cbd5e1;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--ink-3);margin-top:1px}
+  .opt input{margin-top:4px;accent-color:var(--navy)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+  .opt.correct .mark{background:var(--ok);border-color:var(--ok);color:#fff}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+  .opt.wrong .mark{background:var(--bad);border-color:var(--bad);color:#fff}
+  .q-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .btn{
+    border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:8px;padding:6px 14px;
+    font-size:13.5px;font-weight:600;cursor:pointer;transition:.15s
+  }
+  .btn:hover{border-color:var(--navy-2);background:#f1f5f9}
+  .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn.primary:hover{background:var(--navy-2)}
+  .explain{
+    margin-top:10px;border-radius:10px;padding:10px 14px;font-size:14px;
+    background:#f8fafc;border:1px dashed #cbd5e1;color:var(--ink-2);display:none
+  }
+  .explain.show{display:block}
+  .explain b{color:var(--navy)}
+  .score{font-weight:700;color:var(--navy);font-size:15px}
+
+  .toc-progress{font-size:12.5px;color:var(--ink-3);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+  footer{border-top:1px solid var(--line);background:#fff;padding:26px 0;color:var(--ink-3);font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr}
+    .toc{position:static;max-height:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:8px}
+    .topnav{display:none}
+  }
+  @media print{
+    .topbar,.toc,.q-actions,.hero .meta{display:none}
+    body{background:#fff;font-size:12pt}
+    .layout{display:block}
+    .card,.quiz-card,.chapter-head{box-shadow:none;break-inside:avoid}
+    section.chapter{break-inside:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="mark">μ</span>微观经济学复习资料</div>
+    <nav class="topnav">
+      <a href="#ch1">第一章 概论</a>
+      <a href="#ch2">第二章 供求与均衡</a>
+      <a href="#ch3">第三章 消费者行为</a>
+      <a href="#formulas">公式速查</a>
+      <a href="#quiz">自测题</a>
+    </nav>
+    <a class="lang" href="index-en.html">EN</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>微观经济学 · 第一至三章复习资料</h1>
+    <p>基于《微观经济学》课件（第一章 经济学概论、第二章 供求理论与均衡价格、第三章 消费者行为理论）整理：知识点精讲、公式速查、图形辨析、易错点与自测题。</p>
+    <div class="meta">
+      <span>覆盖 <b>3 章 / 6 节</b></span>
+      <span>知识点 <b>90+</b></span>
+      <span>公式卡 <b>20</b></span>
+      <span>自测题 <b>36</b></span>
+      <span>中英双语 <a href="index-en.html" style="color:#fbbf24">English version →</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="layout">
+
+  <aside class="toc">
+    <h4>目录</h4>
+    <a href="#ch1">第一章 经济学概论</a>
+    <a class="lv2" href="#ch1-1">1. 研究对象与稀缺性</a>
+    <a class="lv2" href="#ch1-2">2. 微观 vs 宏观</a>
+    <a class="lv2" href="#ch1-3">3. 研究方法</a>
+    <a class="lv2" href="#ch1-4">4. 发展简史</a>
+    <a href="#ch2">第二章 供求理论与均衡价格</a>
+    <a class="lv2" href="#ch2-1">1. 需求理论</a>
+    <a class="lv2" href="#ch2-2">2. 供给理论</a>
+    <a class="lv2" href="#ch2-3">3. 均衡价格理论</a>
+    <a class="lv2" href="#ch2-4">4. 弹性理论</a>
+    <a class="lv2" href="#ch2-5">5. 弹性理论运用</a>
+    <a href="#ch3">第三章 消费者行为理论</a>
+    <a class="lv2" href="#ch3-1">1. 效用理论</a>
+    <a class="lv2" href="#ch3-2">2. 基数效用论</a>
+    <a class="lv2" href="#ch3-3">3. 序数效用论</a>
+    <a class="lv2" href="#ch3-4">4. 价格/收入消费曲线</a>
+    <a href="#formulas">公式速查表</a>
+    <a href="#quiz">自测题（30 题）</a>
+    <div class="toc-progress">提示：点「显示答案」查看解析；打印或存为 PDF 可用浏览器打印功能。</div>
+  </aside>
+
+  <main>
+
+  <!-- ================= 第一章 ================= -->
+  <section class="chapter" id="ch1">
+    <div class="chapter-head">
+      <div class="kicker">Chapter 1</div>
+      <h2>第一章 经济学概论</h2>
+      <p>研究对象：资源的稀缺性、选择与利用 · 微观与宏观 · 研究方法 · 发展简史</p>
+    </div>
+
+    <h3 class="sec" id="ch1-1">第一节 经济学的研究对象</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>“经济”的含义（三层）</b><br>① 金钱、收入；② 节约、节省、有效率；③ 社会生产、分配、交换、消费等活动以及组织这些活动的制度。
+      <div class="callout info" style="margin-bottom:0"><span class="t">文化背景</span>中国古语“经世济民”“经邦济国”，西方“经济”最初指 household management（家政管理）。</div>
+      </div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>经济学名称与内容的演变</b>：古希腊色诺芬《家政管理》→ 1615 法国蒙克莱田《献给国王和皇后的政治经济学》→ 1776 亚当·斯密《国富论》→ 1936 凯恩斯《通论》→ 1948 萨缪尔森《经济学》。</div></div>
+      <div class="kp"><span class="num">3</span><div class="bd"><b>两大理论体系</b>：马克思主义政治经济学研究<b>社会经济制度与生产关系的发展规律</b>；西方经济学研究<b>稀缺资源的合理配置和充分利用</b>。</div></div>
+    </div>
+
+    <h4 class="sub">一、经济学的研究对象：稀缺性—选择—利用</h4>
+    <div class="card">
+      <ul class="tight">
+        <li><b>资源的稀缺性</b>：相对于人类欲望无限性的资源的有限性。</li>
+        <li><b>欲望无限</b>：清人《解人颐·不知足》——“终日奔波只为饥，方才一饱便思衣……”（考试常作引证）。</li>
+        <li><b>稀缺性的两层含义</b>：① 资源相对于欲望是有限的；② 资源相对于其他资源是稀缺的（有用途才需选择）。</li>
+        <li><b>资源的选择与配置</b>：如何利用既定资源生产各种经济物品以更好满足需要 → 即<b>资源配置问题</b>，包含三个基本问题：
+          <div class="formula">
+<span class="c"># 生产什么 / 生产多少（What &amp; How many）</span> → 生产可能性曲线<br>
+<span class="c"># 如何生产（How）</span> → 生产者行为（生产理论、成本收益理论）<br>
+<span class="c"># 为谁生产（For whom）</span> → 要素价格决定与收入分配理论
+          </div>
+        </li>
+        <li><b>生产可能性曲线（ PPC）</b>：既定资源和技术约束下，社会能够得到的最大产品组合点的轨迹。曲线内部＝<b>资源配置不合理、无法达到</b>；曲线上的点＝有效率。</li>
+        <li><b>资源的利用</b>：如何更好地利用现有稀缺资源生产更多经济物品。资源闲置和浪费的原因：
+          <div class="grid3" style="margin-top:10px">
+            <div class="card" style="margin:0"><b>经济周期与经济增长</b><br><span style="color:var(--ink-2)">为什么产量不能始终保持在 PPC 上</span></div>
+            <div class="card" style="margin:0"><b>充分就业</b><br><span style="color:var(--ink-2)">为什么资源得不到充分利用</span></div>
+            <div class="card" style="margin:0"><b>通货膨胀</b><br><span style="color:var(--ink-2)">货币购买力变动对产量的影响</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="callout tip"><span class="t">经济学定义（必背）</span>经济学是研究<b>在市场经济制度下稀缺资源配置和利用</b>的一门学科。
+      <br><b>制度三分法：</b>计划经济制度、市场经济制度、混合经济制度。</div>
+    </div>
+
+    <h3 class="sec" id="ch1-2">第二节 经济学的基本内容</h3>
+    <div class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>对比项</th><th class="c">微观经济学</th><th class="c">宏观经济学</th></tr></thead>
+        <tbody>
+          <tr><td>研究对象</td><td class="c">单个经济单位的行为（厂商、居民户）</td><td class="c">整个国民经济活动</td></tr>
+          <tr><td>解决的问题</td><td class="c">资源配置问题</td><td class="c">资源利用问题</td></tr>
+          <tr><td>中心理论</td><td class="c">价格理论</td><td class="c">国民收入决定理论</td></tr>
+          <tr><td>研究方法</td><td class="c">个量分析</td><td class="c">总量分析（个量加总、个量平均）</td></tr>
+          <tr><td>基本假设</td><td class="c">市场出清、完全理性、完全信息</td><td class="c">市场机制不完善、政府有能力调控</td></tr>
+          <tr><td>基本内容</td><td class="c">均衡价格理论、消费者行为理论、生产者行为理论、市场结构理论、要素价格决定与分配理论、一般均衡与福利经济学、市场失灵与微观经济政策</td><td class="c">国民收入决定、经济增长、经济周期、失业、通货膨胀、开放经济、宏观经济政策</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout trap"><span class="t">微观三大基本假设（高频考点）</span>
+      ① <b>市场出清（clean market）</b>：价格自发调节下商品、劳动、资本市场供求均衡，资源充分利用。<br>
+      ② <b>完全理性</b>：生产者与消费者都是完全利己的经济人，按最大化原则行事且知道如何实现。<br>
+      ③ <b>完全信息</b>：信息足够多、信息分布绝对对称、获取信息不付任何成本。
+      </div>
+      <div class="callout info"><span class="t">微观与宏观的区别与联系</span>
+      <b>区别</b>：研究对象、解决问题、基本假设、研究方法、中心理论 5 点不同。<br>
+      <b>联系</b>：① 相互补充；② 都以市场经济制度为前提；③ 微观经济学是宏观经济学的基础。
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch1-3">第三节 经济学的研究方法</h3>
+    <div class="card">
+      <h4 class="sub" style="margin-top:0">1. 经济模型与六步法</h4>
+      <p>经济模型：描述相关经济变量之间相互关系的理论结构。典型步骤：</p>
+      <div class="formula">定义变量 → 做出假定 → 提出假说 → 解释与预测 → 检验预测 → 评价与选择（通过检验则接受理论，未通过则拒绝并提出新理论；可修改假定与假说）</div>
+      <ul class="tight">
+        <li><b>内生变量</b>：理论所要解释的变量；<b>外生变量</b>：由理论外因素决定的变量。</li>
+        <li><b>存量</b>：某一时点上存在的变量值；<b>流量</b>：某一时期内发生的变量值。</li>
+        <li><b>判断存量/流量</b>：① 变量值能否直接相加（存量不能、流量能）；② 是否与时间相关（存量无关、流量有关）。</li>
+      </ul>
+      <div class="callout trap"><span class="t">易错</span><b>内生/外生变量 ≠ 自变量/因变量。</b>如 Q = a − bP 中，a、b 为常数，P 与 Q 都是内生变量；国家消费政策、收入、消费观念等未在模型中反映的才是外生变量；在该函数中 P 是自变量、Q 是因变量。</div>
+
+      <h4 class="sub">2. 实证分析与规范分析</h4>
+      <div class="grid2">
+        <div class="card" style="margin:0"><b>实证分析（Positive analysis）</b><br>回答<b>“是什么”</b>的问题，就事论事，不带价值判断。</div>
+        <div class="card" style="margin:0"><b>规范分析（Normative analysis）</b><br>回答<b>“应该是什么”</b>的问题，就事论理，以价值判断为基础。</div>
+      </div>
+
+      <h4 class="sub">3. 均衡分析与边际分析</h4>
+      <ul class="tight">
+        <li><b>均衡分析</b>：假定外界因素已知且固定，研究均衡形成条件。分<b>局部均衡</b>（单个市场、其他条件不变）与<b>一般均衡</b>（各市场作为整体，互相影响）。</li>
+        <li><b>边际分析</b>：边际是经济变量的增量；边际量是某变量每增加 1 单位引起的其他变量的增加量（如边际成本 = 产量每增 1 单位引起的总成本增加量）。</li>
+      </ul>
+
+      <h4 class="sub">4. 静态、比较静态与动态分析</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>方法</th><th>含义</th><th class="c">关注</th></tr></thead>
+        <tbody>
+          <tr><td>静态分析</td><td>不考虑时间因素和达到均衡的过程，只在一定假设下分析某均衡状态<b>形成的条件</b></td><td class="c">条件</td></tr>
+          <tr><td>比较静态分析</td><td>原有条件变化后，把<b>变化后的静态均衡结果</b>加以比较</td><td class="c">比较</td></tr>
+          <tr><td>动态分析</td><td>引入时间因素，分析从原均衡<b>过渡到新均衡的过程</b></td><td class="c">过程</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch1-4">第四节 经济学发展简史</h3>
+    <div class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>时期</th><th class="c">阶段</th><th>代表人物与著作</th><th>核心观点 / 意义</th></tr></thead>
+        <tbody>
+          <tr><td>15–17 世纪中</td><td class="c">重商主义</td><td>早期：海尔斯、斯塔福德、孟克列钦<br>晚期：托马斯·孟《英国得自对外贸易中的财富》(1621/1630)</td><td>货币差额论：金银是财富唯一形态；财富来自贸易出超；政府应鼓励对外贸易。孟：“货币产生贸易，贸易增多货币”</td></tr>
+          <tr><td>18 世纪中</td><td class="c">重农主义</td><td>布阿吉尔贝尔、魁奈</td><td>土地是财富来源，财富不能从买卖中产生，农业占主导</td></tr>
+          <tr><td>18 世纪中–19 世纪 70 年代</td><td class="c">古典经济学</td><td>亚当·斯密《国富论》(1776)<br>大卫·李嘉图《政治经济学和赋税原理》(1817)<br>穆勒、马尔萨斯、萨伊</td><td>斯密：财富是物质产品；分工与资本积累是增加财富的途径；价格自动调节经济；供给决定价格；主张自由放任（经济学史第一次革命）。李嘉图：劳动价值论+分配理论核心，比较优势理论。萨伊：供给自动创造需求</td></tr>
+          <tr><td>19 世纪 70 年代–20 世纪 30 年代</td><td class="c">新古典经济学</td><td>边际效用论：门格尔、杰文斯、瓦尔拉斯<br>均衡价格论：马歇尔《经济学原理》(1890)<br>市场结构：张伯伦《垄断竞争理论》(1933)、罗宾逊《不完全竞争经济学》</td><td>价值由消费者主观评价（边际效用）决定——第二次革命；供求均衡价格理论建立现代微观体系；摒弃完全竞争假定，完成微观经济革命</td></tr>
+          <tr><td>20 世纪 30 年代—40 年代</td><td class="c">现代经济学·宏观建立</td><td>凯恩斯《就业、利息和货币通论》(1936)</td><td>以 30 年代经济大危机为背景，凯恩斯宏观理论出现是标志——经济学发展史第三次革命；理论实践：罗斯福新政</td></tr>
+          <tr><td>20 世纪 40–60 年代末</td><td class="c">宏观发展</td><td>新古典综合学派（萨缪尔森《经济学》1948）、新剑桥学派（庇古、罗宾逊）</td><td>融合马歇尔微观与凯恩斯宏观，构成经济学两个部分</td></tr>
+          <tr><td>20 世纪 70 年代以后</td><td class="c">宏观变革</td><td>货币主义（弗里德曼）、理性预期（卢卡斯）、供给学派（拉弗）、制度经济学（凡勃伦）；新凯恩斯主义（萨缪尔森、斯蒂格勒茨、曼昆）</td><td>背景：60 年代末–70 年代初“滞胀”；反凯恩斯</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout info"><span class="t">三位划时代经济学家</span>亚当·斯密 → 现代微观经济学；卡尔·马克思 → 马克思主义政治经济学；梅纳德·凯恩斯 → 现代宏观经济学。<br><b>主流之争</b>：新凯恩斯主义、货币主义；<b>争论焦点</b>：市场机制是否完全有效、国家是否应该干预经济。</div>
+    </div>
+  </section>
+
+  <!-- ================= 第二章 ================= -->
+  <section class="chapter" id="ch2">
+    <div class="chapter-head">
+      <div class="kicker">Chapter 2</div>
+      <h2>第二章 供求理论与均衡价格</h2>
+      <p>需求理论 · 供给理论 · 均衡价格理论 · 弹性理论及其运用</p>
+    </div>
+
+    <h3 class="sec" id="ch2-1">第一节 需求理论</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>需求的含义</b>：在某一时期内，在每一价格水平上消费者<b>愿意购买而且能够购买</b>的某种商品的数量。三个要点：① 专指某一种商品；② 描述价格与需求量之间的反方向关系；③ 是<b>购买欲望与支付能力的统一</b>，是现实需求而非潜在需求。</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>需求曲线</b>：表示商品价格与需求量之间反方向变化关系的曲线，向右下倾斜。</div></div>
+      <div class="formula">
+D = f(a, b, c, d, …)　<span class="c">一般需求函数</span><br>
+D = f(P)　　　　　 <span class="c">线性：</span>D = a − bP　或　D = aP − b　<span class="c">（a、b 为正的常数）</span>
+      </div>
+      <h4 class="sub">影响需求的因素（7 条，方向务必记牢）</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>因素</th><th class="c">方向</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>1. 商品本身价格</td><td class="c"><span class="tag t-down">反方向</span></td><td>价格升→需求降</td></tr>
+          <tr><td>2. 相关商品价格</td><td class="c"><span class="tag t-flat">视关系</span></td><td><b>互补</b>（汽车–汽油、羽毛球–球拍、手机–充电器）：反方向；<b>替代</b>（猪肉–鸡鸭鱼、肥皂–洗衣液）：同方向</td></tr>
+          <tr><td>3. 消费者收入</td><td class="c"><span class="tag t-flat">视商品</span></td><td>正常商品：同方向；劣质商品：反方向；基本生活必需品基本不变</td></tr>
+          <tr><td>4. 消费者偏好</td><td class="c"><span class="tag t-up">同方向</span></td><td>差异小的商品为何要打广告？</td></tr>
+          <tr><td>5. 对未来的预期</td><td class="c"><span class="tag t-up">同方向</span></td><td>未来收入、支出、商品价格的预期</td></tr>
+          <tr><td>6. 人口数量与结构</td><td class="c"><span class="tag t-flat">结构化</span></td><td>人口与必需品同方向；结构变动影响需求结构（老龄化→老龄用品需求增加）</td></tr>
+          <tr><td>7. 政府的消费政策</td><td class="c"><span class="tag t-up">同方向</span></td><td>—</td></tr>
+          <tr><td>其他</td><td class="c">—</td><td>气候、节假日、意外事件（疫情→口罩/消毒酒精/防护服；情人节→玫瑰/巧克力）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout warn"><span class="t">需求定理与例外</span>
+      <b>需求定理</b>：其他条件不变时，某商品需求量与其价格<b>反方向变动</b>（价格升→量减）。<br>
+      <b>例外</b>：<b>吉芬商品</b>——价格上涨反而需求量增加（如某些劣质品）。</div>
+    </div>
+
+    <h3 class="sec" id="ch2-2">第二节 供给理论</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>供给的含义</b>：在某一时期内，在每一价格水平时厂商<b>愿意而且能够供应</b>的某种商品数量；是<b>供给欲望与供给能力的统一</b>。</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>供给曲线</b>：价格与供给量同方向变化关系，右上倾斜。</div></div>
+      <div class="formula">
+S = f(a, b, c, d, …)　<span class="c">一般供给函数</span><br>
+S = f(P)　　　　　 <span class="c">线性：</span>S = −c + dP　<span class="c">非线性：</span>S = λP<sup>β</sup>　<span class="c">（c、d、λ、β 为正的常数）</span>
+      </div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>影响供给的因素</th><th class="c">方向</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>1. 商品本身价格</td><td class="c"><span class="tag t-up">同方向</span></td><td>价格升→供给增</td></tr>
+          <tr><td>2. 相关商品价格</td><td class="c"><span class="tag t-flat">视关系</span></td><td><b>互补</b>：反方向；<b>替代</b>：同方向；<b>同资源生产</b>（大米–小麦、军工–民用）：反方向</td></tr>
+          <tr><td>3. 生产技术状况</td><td class="c"><span class="tag t-up">同方向</span></td><td>技术进步提高供给</td></tr>
+          <tr><td>4. 生产要素价格</td><td class="c"><span class="tag t-down">反方向</span></td><td>要素涨价抬高成本</td></tr>
+          <tr><td>5. 厂商对未来预期</td><td class="c"><span class="tag t-flat">视情况</span></td><td>乐观预期→当期减少供给、扩大生产规模→未来供给增加；悲观反之</td></tr>
+          <tr><td>6. 政府经济（产业）政策</td><td class="c"><span class="tag t-flat">视政策</span></td><td>鼓励投资生产（减税、5G/新能源/AI/互联网/大数据/特高压/城际高铁）→供给增；限制（纺织、钢铁、水泥、化工）→供给减</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout warn"><span class="t">供给定理与例外</span>
+      <b>供给定理</b>：其他条件不变时，供给量与价格<b>同方向变动</b>。<br>
+      <b>例外</b>：<b>劳动力的供给</b>（工资提高，劳动供给可能下降——麦格雷戈 X 理论：替代效应 vs 收入效应）、<b>土地、文物、艺术品</b>的供给（价格提高，供给量几乎不变）。</div>
+    </div>
+
+    <h3 class="sec" id="ch2-3">第三节 均衡价格理论</h3>
+    <div class="card">
+      <ul class="tight">
+        <li><b>均衡价格</b>：某种商品供给与需求相等时的价格；对应的需求（供给）量即<b>均衡数量</b>。</li>
+        <li><b>形成过程</b>：P &gt; P₀ → 供过于求 → P 下降、Q 趋均衡；P &lt; P₀ → 供不应求 → P 上升、Q 趋均衡。现实中的<b>工资（劳动市场）、利率（资本市场）都是市场均衡价格</b>。</li>
+      </ul>
+      <div class="formula">
+均衡求解：<em>Q<sub>d</sub> = Q<sub>s</sub></em>　→　解方程组得 P₀ 与 Q₀<br>
+<span class="c">例：</span>Q<sub>d</sub> = 22 − 5P，Q<sub>s</sub> = −5 + 4P　⇒　22 − 5P = −5 + 4P ⇒ <em>P = 3，Q<sub>d</sub> = Q<sub>s</sub> = 7</em>
+      </div>
+
+      <figure>
+        <svg viewBox="0 0 640 320" role="img" aria-label="供求均衡图">
+          <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#475569"/></marker></defs>
+          <line x1="70" y1="270" x2="590" y2="270" stroke="#475569" stroke-width="1.6" marker-end="url(#ah)"/>
+          <line x1="70" y1="270" x2="70" y2="30" stroke="#475569" stroke-width="1.6" marker-end="url(#ah)"/>
+          <text x="598" y="286" font-size="14" fill="#475569">Q</text>
+          <text x="52" y="34" font-size="14" fill="#475569">P</text>
+          <line x1="110" y1="250" x2="540" y2="80" stroke="#1d4ed8" stroke-width="2.6"/>
+          <text x="520" y="72" font-size="15" fill="#1d4ed8" font-weight="700">D</text>
+          <line x1="110" y1="80" x2="540" y2="250" stroke="#b91c1c" stroke-width="2.6"/>
+          <text x="520" y="268" font-size="15" fill="#b91c1c" font-weight="700">S</text>
+          <circle cx="325" cy="165" r="6" fill="#173357"/>
+          <line x1="325" y1="165" x2="325" y2="270" stroke="#94a3b8" stroke-dasharray="4 4"/>
+          <line x1="70" y1="165" x2="325" y2="165" stroke="#94a3b8" stroke-dasharray="4 4"/>
+          <text x="332" y="286" font-size="13" fill="#475569">Q₀</text>
+          <text x="40" y="169" font-size="13" fill="#475569">P₀</text>
+          <text x="338" y="160" font-size="14" fill="#173357" font-weight="700">E</text>
+        </svg>
+        <figcaption>图 1：均衡价格 P₀ 与均衡数量 Q₀ 由供给与需求曲线的交点决定</figcaption>
+      </figure>
+
+      <h4 class="sub">供求定理（核心结论）</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>情形</th><th class="c">均衡价格 P₀</th><th class="c">均衡数量 Q₀</th></tr></thead>
+        <tbody>
+          <tr><td>供给不变，需求增加（D 右移）</td><td class="c"><span class="tag t-up">上升</span></td><td class="c"><span class="tag t-up">增加</span></td></tr>
+          <tr><td>供给不变，需求减少（D 左移）</td><td class="c"><span class="tag t-down">下降</span></td><td class="c"><span class="tag t-down">减少</span></td></tr>
+          <tr><td>需求不变，供给增加（S 右移）</td><td class="c"><span class="tag t-down">下降</span></td><td class="c"><span class="tag t-up">增加</span></td></tr>
+          <tr><td>需求不变，供给减少（S 左移）</td><td class="c"><span class="tag t-up">上升</span></td><td class="c"><span class="tag t-down">减少</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout tip"><span class="t">供求定理</span>供给不变 → 需求变动引起 P、Q <b>同方向</b>变动；需求不变 → 供给变动引起 P <b>反方向</b>、Q <b>同方向</b>变动。</div>
+
+      <h4 class="sub">供给与需求同时变动（9 种情形，务必背下符号）</h4>
+      <div class="grid2">
+        <div class="card" style="margin:0">
+          <b>同方向变动</b>
+          <div class="scroll"><table>
+            <tbody>
+              <tr><td>S↗ &gt; D↗</td><td class="c">P₀↘，Q₀↗</td></tr>
+              <tr><td>S↗ = D↗</td><td class="c">P₀不变，Q₀↗</td></tr>
+              <tr><td>S↗ &lt; D↗</td><td class="c">P₀↗，Q₀↗</td></tr>
+              <tr><td>S↘ &gt; D↘</td><td class="c">P₀↗，Q₀↘</td></tr>
+              <tr><td>S↘ = D↘</td><td class="c">P₀不变，Q₀↘</td></tr>
+              <tr><td>S↘ &lt; D↘</td><td class="c">P₀↘，Q₀↘</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="card" style="margin:0">
+          <b>反方向变动</b>
+          <div class="scroll"><table>
+            <tbody>
+              <tr><td>S↗ &gt; D↘</td><td class="c">P₀↘，Q₀↗</td></tr>
+              <tr><td>S↗ = D↘</td><td class="c">P₀↘，Q₀ 不变</td></tr>
+              <tr><td>S↗ &lt; D↘</td><td class="c">P₀↘，Q₀↘</td></tr>
+              <tr><td>S↘ &gt; D↗</td><td class="c">P₀↗，Q₀↘</td></tr>
+              <tr><td>S↘ = D↗</td><td class="c">P₀↗，Q₀ 不变</td></tr>
+              <tr><td>S↘ &lt; D↗</td><td class="c">P₀↗，Q₀↗</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
+      <h4 class="sub">政府对价格的干预：价格政策</h4>
+      <div class="grid2">
+        <div class="card" style="margin:0">
+          <b>① 支持价格（地板价格，Price Floor）</b><br>
+          政府规定的<b>高于</b>均衡价格的最低价格（如农产品价格、最低工资标准）。<br>
+          结果：<b>供过于求</b>，过剩供给 Q<sub>s</sub> − Q<sub>d</sub>。<br>
+          解决：① 收购（增加库存或出口）；② 补贴生产者；③ 限制种植面积。<br>
+          <span class="tag t-up">积极</span>稳定和支持农业发展　<span class="tag t-down">消极</span>① 供过于求 ② 增加政府财政支出 ③ 可能引发国际农产品贸易战
+        </div>
+        <div class="card" style="margin:0">
+          <b>② 限制价格（天花板价格，Price Ceiling）</b><br>
+          政府规定的<b>低于</b>均衡价格的最高价格，用于战时、灾害等特殊时期及生活必需品。<br>
+          结果：<b>供不应求</b>。政府须实行<b>垄断经营</b>或<b>配给制</b>（凭票供应，如粮票 1955–1993）。<br>
+          <span class="tag t-up">积极</span>① 保证基本生活需要 ② 有利社会平等与安定<br>
+          <span class="tag t-down">消极</span>① 不利增加供给、不利抑制需求 → 供不应求 ② 易导致“黑市交易”、败坏社会风气
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch2-4">第四节 弹性理论</h3>
+    <div class="card">
+      <h4 class="sub">1. 需求价格弹性 Ed</h4>
+      <p><b>含义</b>：一种商品价格变动的比率所引起的该商品需求量变动的比率，即需求量变动对价格变动的反应程度。</p>
+      <div class="formula">
+点弹性：<em>E<sub>d</sub> = (dQ / dP) × (P / Q)</em>　　弧弹性：<em>E<sub>d</sub> = −(ΔQ / ΔP) × (P̄ / Q̄)</em><br>
+<span class="c">注意：</span>① 是<b>百分比之比</b>而非绝对量之比；② 需求量与价格反方向变化，弹性为负，实务中<b>取绝对值</b>；③ 同一需求曲线上不同点弹性不同，<b>左上方点的弹性大于右下方点</b>；④ 点弹性是弧弹性的特殊情况。
+      </div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">类型</th><th class="c">系数</th><th>含义</th><th class="c">曲线形状</th><th class="c">典型商品</th></tr></thead>
+        <tbody>
+          <tr><td class="c">完全有弹性</td><td class="c">E<sub>d</sub> → ∞</td><td>既定价格水平下需求无限</td><td class="c">水平线</td><td class="c">—</td></tr>
+          <tr><td class="c">富有弹性</td><td class="c">E<sub>d</sub> &gt; 1</td><td>需求量变动比率 &gt; 价格变动比率</td><td class="c">较平坦</td><td class="c">非必需品、奢侈品、享受性劳务</td></tr>
+          <tr><td class="c">单位弹性</td><td class="c">E<sub>d</sub> = 1</td><td>两者比率相等</td><td class="c">—</td><td class="c">—</td></tr>
+          <tr><td class="c">缺乏弹性</td><td class="c">0 &lt; E<sub>d</sub> &lt; 1</td><td>需求量变动比率 &lt; 价格变动比率</td><td class="c">较陡峭</td><td class="c">大米、食盐、蔬菜、燃料等生活必需品</td></tr>
+          <tr><td class="c">无弹性</td><td class="c">E<sub>d</sub> = 0</td><td>价格无论如何变动需求量都不变</td><td class="c">垂直线</td><td class="c">—</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout info"><span class="t">影响需求价格弹性的 5 个因素</span>
+      ① <b>商品的必需程度</b>：越必需弹性越小（奢侈品弹性大）。<br>
+      ② <b>商品的可替代程度</b>：替代品越多弹性越大。<br>
+      ③ <b>在家庭总支出中所占比重</b>：与弹性<b>成正比</b>。<br>
+      ④ <b>商品使用时间的长短</b>：耐用消费品（时间长）弹性大；非耐用消费品弹性小。<br>
+      ⑤ <b>商品用途的广泛性</b>：与弹性<b>成正比</b>（用途广→价格涨则大幅削减次要用途）。
+      </div>
+
+      <h4 class="sub">2. 需求收入弹性 EI</h4>
+      <div class="formula">E<sub>I</sub> = 需求变动百分比 ÷ 收入变动百分比</div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">类型</th><th class="c">系数</th><th>含义 / 曲线</th></tr></thead>
+        <tbody>
+          <tr><td class="c">无弹性</td><td class="c">E<sub>I</sub> = 0</td><td>收入如何变动需求都不变；需求收入曲线垂直</td></tr>
+          <tr><td class="c">富有弹性</td><td class="c">E<sub>I</sub> &gt; 1</td><td>需求变动百分比 &gt; 收入变动百分比；曲线较平坦</td></tr>
+          <tr><td class="c">缺乏弹性</td><td class="c">0 &lt; E<sub>I</sub> &lt; 1</td><td>需求变动百分比 &lt; 收入变动百分比；曲线较陡峭</td></tr>
+          <tr><td class="c">单位弹性</td><td class="c">E<sub>I</sub> = 1</td><td>两者百分比相等</td></tr>
+          <tr><td class="c">负弹性</td><td class="c">E<sub>I</sub> &lt; 0</td><td>需求与收入反方向变动</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout tip"><span class="t">用收入弹性划分商品类型（必背）</span>
+      E<sub>I</sub> &gt; 0 → <b>正常品</b>；E<sub>I</sub> &lt; 0 → <b>劣质品</b>；正常品中 E<sub>I</sub> &gt; 1 → <b>奢侈品</b>，0 &lt; E<sub>I</sub> &lt; 1 → <b>生活必需品</b>。</div>
+
+      <h4 class="sub">3. 需求交叉弹性 E<sub>xy</sub></h4>
+      <ul class="tight">
+        <li><b>含义</b>：相关两种商品中，一种商品价格变动的比率引起的另一种商品需求变动的比率。</li>
+        <li><b>互补关系</b>（反方向变化）→ 交叉弹性为<b>负</b>；<b>替代关系</b>（同方向变化）→ 交叉弹性为<b>正</b>；无关商品 → <b>0</b>。</li>
+        <li>绝对值越大：互补关系越密切 / 替代关系越强；也可反过来由系数符号判断商品间关系。</li>
+      </ul>
+
+      <h4 class="sub">4. 供给价格弹性 ES</h4>
+      <div class="formula">E<sub>S</sub> = 供给量变动百分比 ÷ 价格变动百分比　（点弹性、弧弹性计算与需求弹性完全相同）</div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">类型</th><th class="c">系数</th><th>含义 / 曲线</th></tr></thead>
+        <tbody>
+          <tr><td class="c">完全有弹性</td><td class="c">E<sub>S</sub> → ∞</td><td>既定价格下供给无限；水平线</td></tr>
+          <tr><td class="c">富有弹性</td><td class="c">E<sub>S</sub> &gt; 1</td><td>供给变动比率 &gt; 价格变动比率；右上倾斜且平坦</td></tr>
+          <tr><td class="c">单位弹性</td><td class="c">E<sub>S</sub> = 1</td><td>两者比率相等；<b>过原点的供给曲线弹性均为 1</b></td></tr>
+          <tr><td class="c">缺乏弹性</td><td class="c">0 &lt; E<sub>S</sub> &lt; 1</td><td>供给变动百分比 &lt; 价格变动百分比；陡峭</td></tr>
+          <tr><td class="c">无弹性</td><td class="c">E<sub>S</sub> = 0</td><td>价格如何变动供给量都不变；垂直线</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout info"><span class="t">影响供给价格弹性的 5 个因素</span>
+      ① <b>时期长短（最关键）</b>：短期只能调整可变要素（劳动力、原材料），无法调整厂房设备 → 弹性小；长期所有要素可调 → 弹性大。<br>
+      ② <b>生产难易程度与生产周期长短</b>：易生产、周期短 → 弹性大。<br>
+      ③ <b>生产技术类型</b>：资本技术密集型规模难变 → 弹性小；劳动密集型 → 弹性大。<br>
+      ④ <b>生产要素的供给弹性</b>：要素弹性大 → 产品弹性大。<br>
+      ⑤ <b>现在产量的大小</b>：产量很小时增产容易 → 弹性大；接近极限时弹性趋于 0。
+      </div>
+      <div class="callout info"><span class="t">微观经济学中短期与长期</span>
+      <b>短期</b>：为了达到一定产量，不能对所有生产要素进行调整的时期；<b>长期</b>：可以对所有生产要素进行调整的时期。
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch2-5">第五节 弹性理论的运用</h3>
+    <div class="card">
+      <h4 class="sub">1. 价格变动与总收益 TR = P × Q</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">需求弹性</th><th class="c">价格与总收益关系</th><th>典型应用</th></tr></thead>
+        <tbody>
+          <tr><td class="c">E<sub>d</sub> &gt; 1（富有弹性）</td><td class="c"><span class="tag t-down">反方向</span></td><td><b>薄利多销</b>（奢侈品税、电影票定价高）</td></tr>
+          <tr><td class="c">0 &lt; E<sub>d</sub> &lt; 1（缺乏弹性）</td><td class="c"><span class="tag t-up">同方向</span></td><td><b>谷贱伤农</b>（倒掉多余牛奶、通货膨胀下反感物价上涨）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="formula">
+<span class="c">例（富有弹性）：</span>汽车 E<sub>d</sub> = 2，P₁ = 10 万 → Q₁ = 1 万，TR₁ = 10 亿；价格降至 P₂ = 9 万 → Q₂ = 1.2 万，TR₂ = 10.8 亿（价降量增，总收益上升）
+      </div>
+
+      <h4 class="sub">2. 蛛网理论（cobweb）</h4>
+      <ul class="tight">
+        <li><b>提出</b>：20 世纪 30 年代舒尔茨（美）、里西（意）提出，1934 年卡尔多因图形似蜘蛛网而命名。<b>核心命题</b>：供求均衡被打破后，市场力量<b>不一定</b>能自动恢复均衡。</li>
+        <li><b>基本假设</b>：① 本期产量决定本期价格 P<sub>t</sub> = f(Q<sub>t</sub><sup>S</sup>)；② 本期价格决定下一期产量 Q<sup>S</sup><sub>t+1</sub> = f(P<sub>t</sub>)。</li>
+      </ul>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">类型</th><th class="c">弹性关系</th><th>价格与产量</th><th class="c">现实</th></tr></thead>
+        <tbody>
+          <tr><td class="c">收敛型蛛网</td><td class="c">E<sub>S</sub> &lt; E<sub>d</sub></td><td>越来越趋于均衡价格与均衡数量</td><td class="c">—</td></tr>
+          <tr><td class="c">发散型蛛网</td><td class="c">E<sub>S</sub> &gt; E<sub>d</sub></td><td>越来越远离均衡</td><td class="c">农产品</td></tr>
+          <tr><td class="c">封闭型蛛网</td><td class="c">E<sub>S</sub> = E<sub>d</sub></td><td>既不远离也不收敛</td><td class="c">—</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout tip"><span class="t">农产品稳定的两大办法</span>
+      ① 对农产品实行<b>支持价格</b>；② 对农产品实行<b>期货交易</b>——现价低则交易商预期未来涨价而大量购进，推动现价上涨；现价高则相反，从而稳定价格。</div>
+
+      <h4 class="sub">3. 政府税收的分担</h4>
+      <ul class="tight">
+        <li><b>直接税</b>：对财产和收入征税，纳税人即负税人，<b>不能转嫁</b>。</li>
+        <li><b>间接税</b>：对商品和服务征税，纳税人不完全是负税人，<b>可以转嫁</b>；又分<b>从量税</b>与<b>从价税</b>。</li>
+        <li><b>从量税的影响</b>：供给曲线<b>垂直向上移动 T</b>，需求曲线不变 → 均衡价格上升、均衡数量减少。</li>
+      </ul>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">弹性关系</th><th>负担分配</th></tr></thead>
+        <tbody>
+          <tr><td class="c">E<sub>d</sub> &gt; E<sub>S</sub></td><td>税额<b>主要由生产者承担</b>；需求弹性越大生产者承担越多；需求完全弹性时生产者承担全部</td></tr>
+          <tr><td class="c">E<sub>d</sub> &lt; E<sub>S</sub></td><td>税额<b>主要由消费者承担</b>；供给弹性越大消费者承担越多；供给完全弹性时消费者承担全部</td></tr>
+          <tr><td class="c">E<sub>d</sub> = E<sub>S</sub></td><td>生产者与消费者<b>平均</b>负担</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="formula">
+消费者负担 = 税后购买价 − 税前购买价 = P₁ − P₀<br>
+生产者负担 = 税前销售收入 − 税后销售收入 = P₀ − (P₁ − T) = P₀ − P₂
+      </div>
+      <div class="formula">
+<span class="c">例：</span>Q<sub>d</sub> = 120 − 4P，Q<sub>s</sub> = −20 + 3P ⇒ 120 − 4P = −20 + 3P ⇒ <em>P₀ = 20，Q₀ = 40</em><br>
+征税 7 元/单位 ⇒ 新供给 Q<sub>s</sub> = −20 + 3(P − 7) = −41 + 3P ⇒ 120 − 4P = −41 + 3P ⇒ <em>P = 23，Q = 28</em><br>
+消费者承担 = 23 − 20 = <em>3 元</em>；生产者承担 = 7 − 3 = <em>4 元</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 第三章 ================= -->
+  <section class="chapter" id="ch3">
+    <div class="chapter-head">
+      <div class="kicker">Chapter 3</div>
+      <h2>第三章 消费者行为理论</h2>
+      <p>效用理论 · 基数效用论（边际效用分析法）· 序数效用论（无差异曲线分析法）· 替代效应与收入效应 · 价格消费曲线与收入消费曲线</p>
+    </div>
+
+    <h3 class="sec" id="ch3-1">第一节 效用理论</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>效用的含义</b>：消费者从某种物品的消费中所获得的满足程度。<br>
+      <b>效用 vs 使用价值</b>：使用价值具有<b>客观性</b>（商品能满足需要的物质属性）；效用具有<b>主观性</b>，因人、因时、因地而异。</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>基数效用理论</b>（杰文斯、瓦尔拉斯）：效用<b>可计量、可加总</b>，用基数表示 → 分析方法：<b>边际效用分析法</b>。</div></div>
+      <div class="kp"><span class="num">3</span><div class="bd"><b>序数效用理论</b>（帕累托、希克斯）：效用作为心理感受<b>不能计量、不能加总</b>，只能表示高低顺序，用序数表示 → 分析方法：<b>无差异曲线分析法</b>。</div></div>
+      <div class="kp"><span class="num">4</span><div class="bd"><b>效用理论对传统理论的质疑</b>：① 重新认识交换的意义；② 质疑价值决定价格（不是劳动产品却有价格、价值大价格低、分解劳动难题、价格不必围绕价值轴心波动）；③ 生财之道就是创造效用；④ 边际效用决定价格。<br>
+      <b>结论</b>：价格由劳动价值与效用共同决定——<b>效用决定价格的上限，生产者成本决定价格的下限</b>。</div></div>
+    </div>
+
+    <h3 class="sec" id="ch3-2">第二节 基数效用理论——边际效用分析法</h3>
+    <div class="card">
+      <div class="formula">
+总效用 TU = f(X) 或 f(X, Y)；<em>边际效用 MU</em> = 每增加 1 单位该物品消费所增加的总效用<br>
+TU = ΣMU；<em>MU &gt; 0 → TU 增加</em>；<em>MU &lt; 0 → TU 减少</em>；<em>MU = 0 → TU 最大</em>
+      </div>
+      <ul class="tight">
+        <li><b>经济商品</b>：增加消费能增加总效用（MU &gt; 0）；<b>经济负商品</b>：增加消费使总效用下降（MU &lt; 0）；<b>经济中性商品</b>：MU = 0。</li>
+      </ul>
+
+      <h4 class="sub">边际效用递减规律</h4>
+      <p><b>含义</b>：在一定时期内、其他物品消费量不变的情况下，随着对某种物品消费量的增加，从<b>连续增加的每一消费单位</b>中得到的边际效用总是递减的（再好的美食吃多了也会腻）。</p>
+      <p><b>原因</b>：① 生理或心理原因（刺激作用越来越小）；② 物品用途多样性（总是从重要到次要再到再次要安排用途）。<b>例外</b>：配套成龙的商品、嗜好成癖的商品。</p>
+
+      <h4 class="sub">消费者均衡</h4>
+      <ul class="tight">
+        <li><b>含义</b>：收入和商品价格一定时，消费者消费一定量商品所能达到<b>效用最大化</b>的状态。</li>
+        <li><b>三个假设</b>：① 消费者嗜好既定；② 收入既定，且每单位货币的边际效用相同；③ 商品价格既定。</li>
+        <li><b>条件</b>：消费者将<b>全部收入</b>用于购买各种商品，且<b>每种商品的边际效用与其价格之比相等</b>。</li>
+      </ul>
+      <div class="formula">
+<em>MU<sub>X</sub> / P<sub>X</sub> = MU<sub>Y</sub> / P<sub>Y</sub> = λ</em>（λ = 每单位货币的边际效用）<br>
+<span class="c">证明（拉格朗日/边际替代）：</span>对多变量函数求<b>偏导</b>，求某变量偏导时把其他变量视为常量<br>
+<span class="c">例：</span>I = 100 元，P<sub>X</sub> = 10 元，P<sub>Y</sub> = 20 元 → 均衡解 (X = 4, Y = 3)，总效用 29 为最大
+      </div>
+
+      <h4 class="sub">边际效用递减规律与需求定理</h4>
+      <p>消费者愿意支付的价格取决于边际效用：MU 大则愿付价格高。MU 递减而货币边际效用 λ 不变 ⇒ 价格下降 ⇒ 需求量与价格反方向变化。</p>
+      <div class="formula">MU = λ × P　⇒　<em>P = MU / λ</em>（MU 递减、λ 不变 ⇒ P 递减）</div>
+
+      <h4 class="sub">消费者剩余与生产者剩余</h4>
+      <ul class="tight">
+        <li><b>消费者剩余</b>（马歇尔提出）：购买一定数量商品<b>愿意支付的价格总额</b>与<b>实际支付的价格总额</b>之间的差额。图形：需求曲线与价格线之间的面积；随消费量增加，每单位商品的消费者剩余递减。</li>
+        <li><b>生产者剩余</b>：生产者<b>愿意供给的价格总额</b>与<b>市场实际价格总额</b>之间的差额（供给曲线与价格线之间的面积）。</li>
+        <li><b>社会福利</b> = 消费者剩余 + 生产者剩余（= 总剩余）。</li>
+      </ul>
+    </div>
+
+    <h3 class="sec" id="ch3-3">第三节 序数效用理论——无差异曲线分析法</h3>
+    <div class="card">
+      <div class="kp"><span class="num">1</span><div class="bd"><b>无差异曲线（效用等高线）</b>：两种商品不同数量组合给消费者带来<b>完全相同效用</b>的一条曲线。</div></div>
+      <div class="kp"><span class="num">2</span><div class="bd"><b>三个基本假设</b>：① 偏好的完全性；② 偏好的可传递性（A&gt;B, B&gt;C ⇒ A&gt;C）；③ 偏好的非饱和性（“多比少好”，所有商品都是经济商品）。</div></div>
+      <div class="kp"><span class="num">3</span><div class="bd"><b>四个特点</b>：① 向右下倾斜，斜率为负；② 同一平面有无数条，<b>离原点越远效用越大</b>；③ <b>任何两条不相交</b>（否则与“多比少好”矛盾）；④ 一般<b>凸向原点</b>（由边际替代率递减决定）。</div></div>
+
+      <h4 class="sub">边际替代率 MRS</h4>
+      <ul class="tight">
+        <li><b>含义</b>：保持总效用不变时，消费者为增加 1 单位 X 而必须减少的 Y 的数量；<b>就是无差异曲线在该点的斜率</b>（作切线求斜率）。</li>
+        <li><b>边际替代率递减规律</b>：保持总效用不变时，X 消费不断增加，每增加 1 单位 X 能替代的 Y 越来越少（注意：递减指的是<b>绝对值</b>在减少）。</li>
+        <li><b>原因</b>：边际效用递减——X 的 MU 越来越小，Y 的 MU 越来越大。</li>
+        <li><b>与曲线形状</b>：MRS 递减 ⇒ 曲线左上段陡、右下段平坦 ⇒ <b>凸向原点</b>。直线（完全替代）不满足递减；凹向原点不满足递减。</li>
+        <li><b>特例</b>：完全替代商品（如纸币与铸币）→ 直线；完全互补商品（如镜片与镜架）→ 直角线。</li>
+      </ul>
+
+      <h4 class="sub">预算约束线（消费约束线、消费可能线）</h4>
+      <div class="formula">
+<em>I = X·P<sub>X</sub> + Y·P<sub>Y</sub></em>　（斜率 = −P<sub>X</sub>/P<sub>Y</sub>，截距：X 轴 I/P<sub>X</sub>，Y 轴 I/P<sub>Y</sub>）
+      </div>
+      <div class="scroll">
+      <table>
+        <thead><tr><th>变动情形</th><th class="c">预算线变化</th></tr></thead>
+        <tbody>
+          <tr><td>价格不变，收入变动</td><td class="c"><span class="tag t-flat">平行移动</span></td></tr>
+          <tr><td>收入不变，两种商品价格同方向同幅度变动</td><td class="c"><span class="tag t-flat">平行移动</span></td></tr>
+          <tr><td>收入不变，一种商品价格不变、另一种变动</td><td class="c"><span class="tag t-key">扇型变动</span></td></tr>
+          <tr><td>收入不变，两种商品价格反方向变动</td><td class="c"><span class="tag t-key">摆型变动</span></td></tr>
+          <tr><td>收入与两种商品价格同方向同幅度变动</td><td class="c"><span class="tag t-flat">不变</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h4 class="sub">序数效用法的消费者均衡</h4>
+      <ul class="tight">
+        <li><b>结论</b>：<b>预算约束线与无差异曲线的切点</b>所对应的商品组合就是消费者均衡点。</li>
+        <li><b>理由</b>：预算线之外的无差异曲线虽效用高但达不到；之内虽可达到但非效用最大；故均衡必在预算线上，而线上只有切点效用最大。</li>
+        <li><b>两个条件</b>：① 均衡点在预算约束线上：I = X·P<sub>X</sub> + Y·P<sub>Y</sub>；② 切点处两线斜率相等：预算线斜率 = 无差异曲线斜率（MRS）⇒ P<sub>X</sub>/P<sub>Y</sub> = MRS<sub>XY</sub> = MU<sub>X</sub>/MU<sub>Y</sub>。</li>
+        <li><b>与基数法比较</b>：MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub> 与 MRS<sub>XY</sub> = P<sub>X</sub>/P<sub>Y</sub> 等价，<b>均衡条件相同，只是分析方法不同</b>。</li>
+      </ul>
+
+      <h4 class="sub">特殊无差异曲线的均衡（易考）</h4>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">情形</th><th>均衡点</th></tr></thead>
+        <tbody>
+          <tr><td class="c">完全替代</td><td>无差异曲线斜率 <b>&gt;</b> 预算线斜率 → 均衡点在<b>横轴</b>（只买横轴商品）；斜率 <b>&lt;</b> 预算线斜率 → 均衡点在<b>纵轴</b>；两者相等 → <b>预算线上所有点</b>均为均衡。称为<b>边界均衡点/角落均衡点</b></td></tr>
+          <tr><td class="c">完全互补</td><td>均衡点为预算约束线与无差异曲线的<b>拐点</b>所对应的商品组合</td></tr>
+          <tr><td class="c">凹向原点</td><td>切点是<b>效用最小点</b>，均衡点为<b>边界均衡点</b>（如收藏品）</td></tr>
+          <tr><td class="c">特殊凸向原点</td><td>因收入限制或价格与效用之比，只买/只愿买其中一种商品 → <b>边界均衡点</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <h3 class="sec" id="ch3-4">第四节 替代效应、收入效应、价格效应 · 消费曲线</h3>
+    <div class="card">
+      <h4 class="sub">1. 希克斯的替代效应、收入效应与价格效应（价格下降时）</h4>
+      <ul class="tight">
+        <li><b>替代效应</b>：其他商品价格不变时，价格下降的商品相对便宜，消费者用它替代较贵商品而增加对该商品的需求 → <b>替代效应 &gt; 0（与价格反方向）</b>。分析时假定<b>实际收入不变（效用不变）</b>。</li>
+        <li><b>收入效应</b>：名义收入不变时，价格下降使实际收入增加，从而增加对该商品的需求。分析时只看<b>实际收入变化</b>。</li>
+        <li><b>价格效应</b> = 替代效应 + 收入效应，即价格下降引起的需求量增加。</li>
+      </ul>
+      <div class="scroll">
+      <table>
+        <thead><tr><th class="c">商品类别</th><th class="c">价格变动</th><th class="c">替代效应</th><th class="c">收入效应</th><th class="c">两者比较</th><th class="c">价格效应</th></tr></thead>
+        <tbody>
+          <tr><td class="c">正常品</td><td class="c">−</td><td class="c">＋</td><td class="c">＋</td><td class="c">—</td><td class="c"><span class="tag t-up">＋</span></td></tr>
+          <tr><td class="c">劣质品</td><td class="c">−</td><td class="c">＋</td><td class="c">−</td><td class="c">|替代| &gt; |收入|</td><td class="c"><span class="tag t-up">＋</span></td></tr>
+          <tr><td class="c">吉芬品</td><td class="c">−</td><td class="c">＋</td><td class="c">−</td><td class="c">|替代| &lt; |收入|</td><td class="c"><span class="tag t-down">−</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout trap"><span class="t">易错提醒</span>吉芬商品价格下降，需求量<b>减少</b>，原因就是负的收入效应绝对值大于替代效应——这是需求定理的唯一例外。</div>
+
+      <h4 class="sub">2. 价格消费曲线（PCC）与需求曲线</h4>
+      <ul class="tight">
+        <li><b>价格消费曲线</b>：收入和其他商品价格不变时，随某商品价格变化形成的<b>若干条预算约束线与若干条无差异曲线的切点的连线</b>；曲线上所有点都能实现消费者均衡。</li>
+        <li><b>由 PCC 推导需求曲线</b>：随 X 价格变化，均衡时的需求量与价格反方向变化 ⇒ 需求曲线向右下倾斜；需求曲线上每一点都表示在相应价格下带来最大效用的需求量。</li>
+      </ul>
+
+      <h4 class="sub">3. 收入消费曲线（ICC）与恩格尔曲线</h4>
+      <ul class="tight">
+        <li><b>收入消费曲线</b>：商品价格不变时，随收入变化形成的<b>若干条预算约束线与若干条无差异曲线的切点的连线</b>；曲线上所有点都能实现消费者均衡。</li>
+        <li><b>恩格尔曲线</b>：表示消费者收入与某种商品需求数量之间关系的曲线。正常商品向右上方倾斜，劣质商品向左上方倾斜。</li>
+        <li><b>恩格尔定律</b>：随着收入不断增加，<b>食品支出在家庭开支中占的比重越来越小</b>，其他方面开支占比越来越大。恩格尔系数越低，生活水平越高。</li>
+      </ul>
+      <div class="callout info"><span class="t">恩格尔系数与生活水平（标准经验值）</span>59%以上：贫困；50%–59%：温饱；40%–50%：小康；30%–40%：富裕；30%以下：最富裕。2019 年中国为 <b>28.2%</b>。</div>
+    </div>
+  </section>
+
+  <!-- ================= 公式速查 ================= -->
+  <section class="chapter" id="formulas">
+    <div class="chapter-head">
+      <div class="kicker">Formula Sheet</div>
+      <h2>公式速查表</h2>
+      <p>考试直接套用的 20 个核心公式与判定式</p>
+    </div>
+    <div class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>#</th><th>公式 / 判定</th><th>适用与说明</th></tr></thead>
+        <tbody>
+          <tr><td class="c">1</td><td>均衡：Q<sub>d</sub> = Q<sub>s</sub></td><td>解出均衡价格 P₀ 与均衡数量 Q₀</td></tr>
+          <tr><td class="c">2</td><td>需求函数 D = a − bP</td><td>a、b 为正；需求定理</td></tr>
+          <tr><td class="c">3</td><td>供给函数 S = −c + dP</td><td>c、d 为正</td></tr>
+          <tr><td class="c">4</td><td>需求价格弹性点弹性 E<sub>d</sub> = (dQ/dP)(P/Q)</td><td>取绝对值；左上方点弹性大</td></tr>
+          <tr><td class="c">5</td><td>需求价格弹性弧弹性 E<sub>d</sub> = (ΔQ/ΔP)(P̄/Q̄)</td><td>取绝对值；点弹性是弧弹性的特例</td></tr>
+          <tr><td class="c">6</td><td>需求收入弹性 E<sub>I</sub> = (ΔQ/Q)/(ΔI/I)</td><td>E<sub>I</sub>&gt;0 正常品；&lt;0 劣质品</td></tr>
+          <tr><td class="c">7</td><td>需求交叉弹性 E<sub>xy</sub> = (ΔQ<sub>x</sub>/Q<sub>x</sub>)/(ΔP<sub>y</sub>/P<sub>y</sub>)</td><td>负=互补，正=替代</td></tr>
+          <tr><td class="c">8</td><td>供给价格弹性 E<sub>S</sub> = (ΔQ/Q)/(ΔP/P)</td><td>长期 &gt; 短期</td></tr>
+          <tr><td class="c">9</td><td>总收益 TR = P × Q</td><td>E<sub>d</sub>&gt;1 与价格反方向；E<sub>d</sub>&lt;1 同方向</td></tr>
+          <tr><td class="c">10</td><td>税收后供给 S₁ = S + T（垂直上移 T）</td><td>消费者负担 = P₁−P₀；生产者负担 = P₀−(P₁−T)</td></tr>
+          <tr><td class="c">11</td><td>蛛网收敛条件 E<sub>S</sub> &lt; E<sub>d</sub></td><td>发散：E<sub>S</sub>&gt;E<sub>d</sub>；封闭：相等</td></tr>
+          <tr><td class="c">12</td><td>总效用 TU = ΣMU</td><td>MU&gt;0→TU 增；MU=0→TU 最大</td></tr>
+          <tr><td class="c">13</td><td>消费者均衡（基数法）MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub> = λ</td><td>并用尽全部收入</td></tr>
+          <tr><td class="c">14</td><td>MU = λP ⇒ P = MU/λ</td><td>边际效用递减 ⇒ 需求定理</td></tr>
+          <tr><td class="c">15</td><td>消费者剩余 = 愿付总额 − 实付总额</td><td>生产者剩余对称</td></tr>
+          <tr><td class="c">16</td><td>MRS<sub>XY</sub> = MU<sub>X</sub>/MU<sub>Y</sub> = 无差异曲线斜率</td><td>绝对值递减 ⇒ 凸向原点</td></tr>
+          <tr><td class="c">17</td><td>预算约束线 I = X·P<sub>X</sub> + Y·P<sub>Y</sub></td><td>斜率 = −P<sub>X</sub>/P<sub>Y</sub></td></tr>
+          <tr><td class="c">18</td><td>序数法均衡：I = XP<sub>X</sub>+YP<sub>Y</sub> 且 MRS = P<sub>X</sub>/P<sub>Y</sub></td><td>切点条件</td></tr>
+          <tr><td class="c">19</td><td>价格效应 = 替代效应 + 收入效应</td><td>吉芬品：|替代| &lt; |收入| ⇒ 价格效应为负</td></tr>
+          <tr><td class="c">20</td><td>恩格尔系数 = 食品支出 / 总支出</td><td>系数越低生活水平越高</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 自测题 ================= -->
+  <section class="chapter" id="quiz">
+    <div class="chapter-head">
+      <div class="kicker">Self-Test</div>
+      <h2>自测题（30 题）</h2>
+      <p>每题点击「显示答案」查看解析；建议先独立作答再用解析核对错题。</p>
+    </div>
+
+    <div class="card" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <button class="btn primary" onclick="checkAll()">批改本组答案</button>
+      <button class="btn" onclick="resetAll()">全部重做</button>
+      <button class="btn" onclick="showAll()">展开全部解析</button>
+      <span class="score" id="scoreBox">得分：0 / 0</span>
+    </div>
+
+    <div id="quizBox"></div>
+  </section>
+
+  </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>微观经济学复习资料 · 第 1–3 章 · 依据课程课件整理</span>
+    <span>English version: <a href="index-en.html">index-en.html</a></span>
+  </div>
+</footer>
+
+<script>
+const QUESTIONS = [
+  // ---------- 第一章 ----------
+  {c:"第一章", q:"经济学的研究对象是（ ）。", o:["稀缺资源的配置和利用"," GDP 的核算方法","价格上涨的原因","产业结构的调整"], a:0,
+   e:"经济学是研究<b>在市场经济制度下稀缺资源配置和利用</b>的一门学科。稀缺性—选择—利用是主线。"},
+  {c:"第一章", q:"下列关于稀缺性的说法正确的是（ ）。", o:["稀缺性是资源数量绝对不足","资源越多越不稀缺","稀缺性只指技术条件","稀缺性是相对于人类欲望无限性的资源有限性"], a:3,
+   e:"稀缺性有两层含义：① 资源相对欲望是有限的；② 资源相对其他资源是稀缺的。资源丰富不等于不稀缺。"},
+  {c:"第一章", q:"“生产什么、如何生产、为谁生产”合称为（ ）。", o:["经济模型","边际分析","一般均衡","资源配置问题"], a:3,
+   e:"这三个问题统称<b>资源配置问题</b>，其中“生产什么、生产多少”对应生产可能性曲线。"},
+  {c:"第一章", q:"微观经济学的中心理论是（ ）。", o:["国民收入决定理论","增长理论","货币数量论","价格理论"], a:3,
+   e:"微观：中心理论是价格理论，研究方法是个量分析；宏观：中心理论是国民收入决定理论，方法是总量分析。"},
+  {c:"第一章", q:"微观经济学的三大基本假设是（ ）。", o:["市场出清、完全理性、完全信息","完全竞争、完全理性、完全信息","市场失灵、理性不足、信息不对称","规模经济、成本递减、边际报酬"], a:0,
+   e:"① 市场出清；② 完全理性（完全利己且按最大化原则行事）；③ 完全信息（信息多、对称、获取无成本）。"},
+  {c:"第一章", q:"关于内生变量与外生变量，下列说法正确的是（ ）。", o:["内生变量等于自变量","外生变量等于因变量","Q=a−bP 中 a、b 是外生变量","内生变量是理论要解释的变量，外生变量由理论外因素决定"], a:3,
+   e:"内生/外生 ≠ 自变量/因变量。Q=a−bP 中 P 是自变量、Q 是因变量，二者都是内生变量；a、b 是常数；消费政策、收入、消费观念等才是外生变量。"},
+  {c:"第一章", q:"实证分析与规范分析的区别在于（ ）。", o:["是否使用数学","是否研究价格","是否假设完全理性","回答“是什么”还是“应该是什么”"], a:3,
+   e:"实证分析回答“是什么”，就事论事、不带价值判断；规范分析回答“应该是什么”，以价值判断为基础。"},
+  {c:"第一章", q:"“当原有条件变化后，将变化后的静态均衡结果进行比较”属于（ ）。", o:["静态分析","动态分析","均衡分析","比较静态分析"], a:3,
+   e:"比较静态分析只比较结果；动态分析引入时间因素研究过渡过程；静态分析只研究均衡形成的条件。"},
+  {c:"第一章", q:"《国富论》(1776) 的作者及其主要贡献是（ ）。", o:["凯恩斯，宏观理论","马歇尔，均衡价格理论","萨缪尔森，新古典综合","亚当·斯密，劳动价值理论与自由放任思想"], a:3,
+   e:"斯密的《国富论》标志经济学发展史上第一次革命，贡献包括劳动价值理论与自由放任思想。"},
+  {c:"第一章", q:"被称为“经济学发展史上的第二次革命”的是（ ）。", o:["凯恩斯《通论》","供求均衡价格理论","边际效用理论","垄断竞争理论"], a:2,
+   e:"19 世纪 70 年代门格尔、杰文斯、瓦尔拉斯提出边际效用理论，是第二次革命；马歇尔《经济学原理》建立现代微观体系；凯恩斯《通论》是第三次革命。"},
+
+  // ---------- 第二章 ----------
+  {c:"第二章", q:"需求是消费者在某一时期、每一价格水平上（ ）。", o:["愿意购买的商品数量","能够购买的商品数量","愿意购买且能够购买的商品数量","曾经购买过的商品数量"], a:2,
+   e:"需求是<b>购买欲望 + 支付能力</b>的统一，是现实需求而非潜在需求。供给同理。"},
+  {c:"第二章", q:"某种商品价格上升，其互补品的需求将（ ）。", o:["增加","不变","减少","先增后减"], a:2,
+   e:"互补品（汽车–汽油）价格变化引起另一商品需求<b>反方向</b>变化；替代品（猪肉–鸡鸭鱼）则是同方向。"},
+  {c:"第二章", q:"在需求曲线上，某商品自身价格变化引起的移动是（ ）。", o:["需求的变动","供给的变动","需求量的变动","均衡数量的变动"], a:2,
+   e:"自身价格变动 → <b>同一条需求曲线上点的移动</b>（需求量变动）；其他因素变动 → <b>整条曲线移动</b>（需求变动）。"},
+  {c:"第二章", q:"需求定理的例外是（ ）。", o:["吉芬商品","奢侈品","耐用品","正常商品"], a:0,
+   e:"吉芬商品价格上升需求量反而增加（劣质品，收入效应大于替代效应）。"},
+  {c:"第二章", q:"已知 Q<sub>d</sub> = 22 − 5P，Q<sub>s</sub> = −5 + 4P，均衡价格与均衡数量为（ ）。", o:["P=3，Q=7","P=7，Q=3","P=27，Q=−113","P=2.7，Q=8.5"], a:0,
+   e:"令 Q<sub>d</sub>=Q<sub>s</sub>：22−5P = −5+4P ⇒ 9P = 27 ⇒ P = 3，Q = 22−15 = 7。"},
+  {c:"第二章", q:"在供给不变的情况下，需求减少会导致均衡价格和均衡数量（ ）。", o:["都上升","价格上升、数量下降","都下降","价格下降、数量上升"], a:2,
+   e:"供求定理：供给不变时，需求变动引起 P 与 Q <b>同方向</b>变动；需求不变时，供给变动引起 P <b>反方向</b>、Q 同方向变动。"},
+  {c:"第二章", q:"支持价格（地板价格）的特点是（ ）。", o:["高于均衡价格，导致供不应求","等于均衡价格","低于均衡价格，导致供过于求","由市场自发形成"], a:2,
+   e:"支持价格 P₁ &gt; P₀ ⇒ <b>供过于求</b>，政府需收购/补贴/限制种植面积；限制价格 P₁ &lt; P₀ ⇒ <b>供不应求</b>，需配给制。"},
+  {c:"第二章", q:"某商品价格弹性 Ed &gt; 1，则该商品（ ）。", o:["是生活必需品","价格与总收益反方向变动","需求曲线较陡峭","属于劣质商品"], a:1,
+   e:"Ed &gt; 1 为富有弹性（奢侈品、非必需品），曲线较平坦，价格与总收益<b>反方向</b>变动——即“薄利多销”。Ed &lt; 1 为缺乏弹性（生活必需品），价格与总收益同方向——“谷贱伤农”。"},
+  {c:"第二章", q:"若某商品是生活必需品，可以推断其需求价格弹性（ ）。", o:["大于 1","小于 1","等于 1","等于 0"], a:1,
+   e:"越是生活必需品，需求价格弹性越小（缺乏弹性）。"},
+  {c:"第二章", q:"用收入弹性划分商品类型时，E<sub>I</sub> &lt; 0 的商品是（ ）。", o:["正常品","奢侈品","必需品","劣质品"], a:3,
+   e:"E<sub>I</sub> &gt; 0 → 正常品（&gt;1 奢侈品，0–1 必需品）；E<sub>I</sub> &lt; 0 → 劣质品。"},
+  {c:"第二章", q:"两种商品为替代关系，则其需求交叉弹性系数（ ）。", o:["为正","为负","为零","大于 1"], a:0,
+   e:"互补关系 → 交叉弹性为负；替代关系 → 为正；无关商品 → 为 0。"},
+  {c:"第二章", q:"影响供给价格弹性最关键的因素是（ ）。", o:["生产技术类型","现在产量的大小","生产要素的供给弹性","时期的长短"], a:3,
+   e:"时期长短最关键：短期只能调整可变要素（劳动、原材料），弹性小；长期全部要素可调，弹性大。"},
+  {c:"第二章", q:"收敛型蛛网的条件是（ ）。", o:["E<sub>S</sub> &gt; E<sub>d</sub>","E<sub>S</sub> = E<sub>d</sub>","E<sub>S</sub> &lt; E<sub>d</sub>","E<sub>S</sub> · E<sub>d</sub> = 1"], a:2,
+   e:"供给弹性小于需求弹性 → 价格与产量越来越趋于均衡（收敛）；农产品因 E<sub>S</sub> &gt; E<sub>d</sub> 属发散型。"},
+  {c:"第二章", q:"已知 Q<sub>d</sub> = 120 − 4P，Q<sub>s</sub> = −20 + 3P，若对生产者每单位征税 7 元，消费者承担（ ）。", o:["3 元","4 元","7 元","0 元"], a:0,
+   e:"税后供给 = −20 + 3(P−7) = −41+3P，联立 120−4P = −41+3P ⇒ P = 23，Q = 28。消费者负担 = 23−20 = 3，生产者负担 = 7−3 = 4。"},
+  {c:"第二章", q:"若需求弹性大于供给弹性，税额主要由（ ）。", o:["消费者承担","生产者承担","双方平均承担","政府承担"], a:1,
+   e:"弹性大的一方“跑不掉”，税负更多落在缺乏弹性的一方：E<sub>d</sub> &gt; E<sub>S</sub> → 生产者多担；E<sub>S</sub> &gt; E<sub>d</sub> → 消费者多担；相等则平均分担。"},
+
+  // ---------- 第三章 ----------
+  {c:"第三章", q:"效用理论中，“序数效用理论”的提出者是（ ）。", o:["杰文斯、瓦尔拉斯","帕累托、希克斯","马歇尔、凯恩斯","门格尔、瓦尔拉斯"], a:1,
+   e:"基数效用论：杰文斯、瓦尔拉斯 → 边际效用分析法；序数效用论：帕累托、希克斯 → 无差异曲线分析法。"},
+  {c:"第三章", q:"边际效用递减规律意味着（ ）。", o:["TU 递减","MU 递减","价格上升","需求曲线右移"], a:1,
+   e:"TU = ΣMU；MU &gt; 0 时 TU 仍增加，只是增加得越来越慢，故递减的是 MU 而非 TU。"},
+  {c:"第三章", q:"基数效用论下消费者均衡的条件是（ ）。", o:["MU<sub>X</sub> = MU<sub>Y</sub>","MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub>","P<sub>X</sub> = P<sub>Y</sub>","X = Y"], a:1,
+   e:"每单位货币的边际效用相等：MU<sub>X</sub>/P<sub>X</sub> = MU<sub>Y</sub>/P<sub>Y</sub> = λ，且用尽全部收入。"},
+  {c:"第三章", q:"无差异曲线不可能相交的原因是（ ）。", o:["偏好的完全性","偏好的可传递性","偏好的非饱和性（多比少好）","边际替代率递减"], a:2,
+   e:"若两线相交于一点，则由非饱和性可推出矛盾（交点处“更多更好”必然优于一侧），故不能相交。"},
+  {c:"第三章", q:"无差异曲线的斜率表示（ ）。", o:["价格之比 P<sub>X</sub>/P<sub>Y</sub>","边际替代率 MRS","边际效用 MU","边际成本"], a:1,
+   e:"MRS 就是无差异曲线在该点的斜率（切线斜率）；预算约束线的斜率才是 P<sub>X</sub>/P<sub>Y</sub>。均衡时二者相等。"},
+  {c:"第三章", q:"序数效用论下，消费者均衡点是（ ）。", o:["预算线与无差异曲线的切点","坐标轴上的点","无差异曲线与原点之间区域","预算线之外"], a:0,
+   e:"切点代表在预算约束下可达到的最大效用；预算线之外不可达，之内效用非最大。"},
+  {c:"第三章", q:"消费者的收入和价格都不变，预算约束线的形状是（ ）。", o:["向左下倾斜的直线","向右上方倾斜的直线","垂直线","水平线"], a:0,
+   e:"I = X·P<sub>X</sub> + Y·P<sub>Y</sub>，斜率 = −P<sub>X</sub>/P<sub>Y</sub> &lt; 0，为向左下倾斜的直线。"},
+  {c:"第三章", q:"吉芬商品价格下降时，其价格效应为负，原因是（ ）。", o:["替代效应为负","收入效应为负且绝对值大于替代效应","替代效应为 0","需求曲线左移"], a:1,
+   e:"价格下降 → 替代效应为正、收入效应为负；当 |收入效应| &gt; |替代效应|（吉芬品），两者相加为负，需求量反而减少。"},
+  {c:"第三章", q:"完全互补商品的无差异曲线形状是（ ）。", o:["向右下倾斜的凸曲线","直线","直角线","垂直线"], a:2,
+   e:"完全替代（如纸币与铸币）→ 直线；完全互补（如镜片与镜架）→ 直角线，拐点即消费者均衡点。"},
+  {c:"第三章", q:"恩格尔定律指出，随着收入增加（ ）。", o:["食品支出占家庭开支比重越来越小","食品支出占家庭开支比重越来越大","恩格尔系数上升","所有商品需求都同比例增加"], a:0,
+   e:"恩格尔定律：收入增加时食品支出占比下降，其他开支占比上升，恩格尔系数越低生活水平越高（2019 年中国 28.2%）。"},
+  {c:"第三章", q:"消费者剩余是指（ ）。", o:["消费者支付的实际价格总额","消费者愿意支付的价格总额与实际支付总额之间的差额","消费者获得的利润","生产者剩余的对立面"], a:1,
+   e:"消费者剩余 = 愿付总额 − 实付总额，图形为需求曲线与价格线之间的面积；生产者剩余对称，二者之和为社会福利。"}
+];
+
+const LETTERS = ["A","B","C","D"];
+
+function render(){
+  const box = document.getElementById('quizBox');
+  let html = '';
+  let lastC = '';
+  QUESTIONS.forEach((q, i) => {
+    if (q.c !== lastC) {
+      lastC = q.c;
+      html += `<h4 class="sub" style="margin-top:26px">${q.c}</h4>`;
+    }
+    html += `<div class="quiz-card" data-qi="${i}">
+      <div class="q-head"><span class="q-no">Q${i+1}</span></div>
+      <div class="q-text">${q.q}</div>
+      <div class="opts">
+        ${q.o.map((o,j)=>`<label class="opt" data-j="${j}"><span class="mark">${LETTERS[j]}</span><input type="radio" name="q${i}" value="${j}"><span>${o}</span></label>`).join('')}
+      </div>
+      <div class="q-actions">
+        <button class="btn" onclick="toggleAnswer(${i})">显示答案</button>
+        <button class="btn" onclick="clearQ(${i})">清除本题</button>
+      </div>
+      <div class="explain" id="ex${i}"><b>参考答案：${LETTERS[q.a]}</b> —— ${q.e}</div>
+    </div>`;
+  });
+  box.innerHTML = html;
+  box.querySelectorAll('.opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const card = opt.closest('.quiz-card');
+      const qi = +card.dataset.qi;
+      const j = +opt.dataset.j;
+      card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+      card.querySelectorAll('input').forEach(r=>r.checked=false);
+      card.querySelector(`input[value="${j}"]`).checked = true;
+      opt.classList.add(j === QUESTIONS[qi].a ? 'correct' : 'wrong');
+      updateScore();
+    });
+  });
+}
+
+function toggleAnswer(i){
+  const ex = document.getElementById('ex'+i);
+  ex.classList.toggle('show');
+}
+function showAll(){
+  QUESTIONS.forEach((_,i)=>document.getElementById('ex'+i).classList.add('show'));
+}
+function clearQ(i){
+  const card = document.querySelector(`.quiz-card[data-qi="${i}"]`);
+  card.querySelectorAll('input').forEach(r=>r.checked=false);
+  card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+  document.getElementById('ex'+i).classList.remove('show');
+  updateScore();
+}
+function checkAll(){
+  QUESTIONS.forEach((q,i)=>{
+    const card = document.querySelector(`.quiz-card[data-qi="${i}"]`);
+    card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+    const checked = card.querySelector('input:checked');
+    if (checked) {
+      const j = +checked.value;
+      card.querySelectorAll('.opt')[j].classList.add(j===q.a?'correct':'wrong');
+    }
+    document.getElementById('ex'+i).classList.add('show');
+  });
+  updateScore();
+}
+function resetAll(){
+  document.querySelectorAll('.quiz-card').forEach(card=>{
+    card.querySelectorAll('input').forEach(r=>r.checked=false);
+    card.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+  });
+  document.querySelectorAll('.explain').forEach(e=>e.classList.remove('show'));
+  updateScore();
+}
+function updateScore(){
+  let right = 0, answered = 0;
+  QUESTIONS.forEach((q,i)=>{
+    const card = document.querySelector(`.quiz-card[data-qi="${i}"]`);
+    const checked = card && card.querySelector('input:checked');
+    if (checked){ answered++; if (+checked.value === q.a) right++; }
+  });
+  document.getElementById('scoreBox').textContent = `得分：${right} / ${QUESTIONS.length}（已答 ${answered}）`;
+}
+render();
+</script>
+</body>
+</html>
